@@ -1,0 +1,107 @@
+[
+ {
+  "id": "middle_114-2_s2_q42",
+  "reason": "vgsales 題組(43~47)情境開頭黏進本題選項 D",
+  "set": {
+   "options.D": "poisson.cdf(10, 5)表示大於或等於10個瑕疵品的機率"
+  }
+ },
+ {
+  "id": "middle_114-2_s2_q43",
+  "reason": "補回 vgsales 題組情境的開頭段落(共用 dict, 43~47 一起生效)",
+  "prepend": {
+   "context.text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如"
+  }
+ },
+ {
+  "id": "middle_114-2_s2_q47",
+  "reason": "marketing 題組(48~50)情境開頭黏進本題選項 D",
+  "set": {
+   "options.D": "sns.countplot(x=\"Name\", y=\"NA_Sales\", data=data)"
+  }
+ },
+ {
+  "id": "middle_114-2_s2_q48",
+  "reason": "補回 marketing 題組情境的開頭(斷行造成)",
+  "prepend": {
+   "context.text": "使用銷售資料集(marketing.csv)進行迴歸分析，附圖程式碼展示資料載"
+  }
+ },
+ {
+  "id": "middle_115-1_s2_q40",
+  "reason": "共享乘車題組(41~44)情境開頭黏進本題選項 D",
+  "set": {
+   "options.D": "隨機森林分類器（Random Forest Classifier）"
+  }
+ },
+ {
+  "id": "middle_115-1_s2_q41",
+  "reason": "補回共享乘車題組情境描述",
+  "prepend": {
+   "context.text": "某全球共享乘車平台的資料科學團隊，正針對2025年第四季度進行營收優化與防弊分析專案。團隊希望透過資料分析達成兩項目標：一是預測司機未來收入表現，以支援營運策略與獎勵機制調整；二是希望透過分析裝置與定位回傳資料，辨識潛在異常行為，以降低補貼濫用風險。\n為此，團隊整理出一份司機每日營運資料檔（driver_daily_stats.csv），其中每筆資料代表某位司機於某一天的營運表現與系統回傳摘要資訊。資料欄位如下：\n● driver_id：司機編號\n● daily_earnings：日總收入（單位：美元）\n● region：註冊營運區域（以字串A、B、C表示）\n● app_version：使用的司機端App版本（如v1.0、v2.0）\n● gps_ping_rate：每分鐘回傳GPS訊號的次數\n"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q41",
+  "reason": "VGG16 題組(42~45)情境開頭黏進本題選項 D",
+  "set": {
+   "options.D": "A_and_B.sum() / B.sum()"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q42",
+  "reason": "補回 VGG16 題組情境開頭段落",
+  "prepend": {
+   "context.text": "VGG16是由牛津大學Visual Geometry Group(VGG)在2014年提出的經典卷積神經網路（Convolutional Neural Network, CNN）架構。該模型以簡潔且規則的層堆疊設計聞名，廣泛應用於影像分類、特徵提取及遷移學習等任務。附圖程式碼載入了預訓練的VGG16模型，並輸出其完整層級結構"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q45",
+  "reason": "手寫數字題組(46~47)情境黏進本題選項 D; fig5/fig6 屬於該題組情境",
+  "set": {
+   "options.D": "",
+   "figures": [
+    {"src": "images/middle_114-2_s3_q45_fig1.png", "position": "option:A"},
+    {"src": "images/middle_114-2_s3_q45_fig2.png", "position": "option:B"},
+    {"src": "images/middle_114-2_s3_q45_fig3.png", "position": "option:C"},
+    {"src": "images/middle_114-2_s3_q45_fig4.png", "position": "option:D"}
+   ]
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q46",
+  "reason": "補回手寫數字題組情境描述與其兩張圖(load_digits 程式碼、樣本圖)",
+  "prepend": {
+   "context.text": "在郵遞區號自動辨識的研究中，研究人員收集了一份手寫數字影像資料集，每一張影像為8×8的灰階圖片，共包含多個手寫數字樣本。這份資料集來自UCI Machine Learning Repository，常被用於數字辨識與機器學習方法的教學與實驗。\n在過程中，研究人員發現資料中可能存在雜訊，例如筆跡模糊或影像中附加的干擾點，這會影響後續分類模型的效能。因此，他們希望透過資料降噪的方法，提升後續分類的準確度。同時，他們也想透過KNN (K-Nearest Neighbors) 搭配交叉驗證來評估模型表現，確保模型在不同資料切割下都能有穩定的預測能力。\n部分樣本經繪製後的外觀如下圖所示：\n"
+  },
+  "set": {
+   "context.figures": ["images/middle_114-2_s3_q45_fig5.png", "images/middle_114-2_s3_q45_fig6.png"]
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q47",
+  "reason": "情境段落與前題選項跨段黏連(PDF 版面無分隔), 手動還原",
+  "set": {
+   "options.D": "程式碼C、程式碼D"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q48",
+  "set": {
+   "context.text": "使用鐵達尼號(Titanic)資料集進行多層感知機(Multilayer Perceptron, MLP)分類預測分析，其中survived為反應變數(1表示存活，0表示死亡)。附圖程式碼展示資料載入與處理，請根據此資料回答第48~50題。\n下圖顯示資料集的前5筆資料。"
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q48",
+  "reason": "情境描述在「請根據上述情境」標記行之前, 被誤併入本題選項 D, 手動還原",
+  "set": {
+   "options.D": "模型過擬合（Overfitting）"
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q49",
+  "set": {
+   "context.text": "某人工智慧團隊正在開發一套自動光學檢測（Automated Optical Inspection, AOI）系統，目標是透過機械手臂上的相機，自動辨識晶圓表面是否存在「劃傷（Scratch）」或「污點（Spot）」等瑕疵。目前系統開發面臨以下挑戰：\n● 資料極度不平衡，正常晶圓影像約佔99%，有瑕疵影像僅佔1%。\n● 輸入影像品質不一致，包含不同解析度，且部分影像因機械手臂震動而出現模糊。\n● 在使用深層卷積神經網路（CNN）訓練時，Loss曲線震盪劇烈，甚至偶爾出現數值溢出（NaN）情形。\n請根據上述情境，回答第49~50題。"
+  }
+ }
+]

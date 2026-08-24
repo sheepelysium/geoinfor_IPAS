@@ -1,0 +1,35 @@
+# iPAS AI應用規劃師 題庫練習網站
+
+經濟部 iPAS「AI應用規劃師」歷屆試題線上刷題工具。純靜態網站,雙擊 `site/index.html` 即可使用。
+
+## 使用
+
+直接開 [site/index.html](site/index.html):
+
+- 初級 / 中級切換(題庫完全分離)
+- 全科混合或單科,每回合隨機抽 20 題
+- 選項順序隨機(正解不固定在同一字母)
+- 作答後立即顯示 AI 詳解:解題思路 + 每個選項對錯原因
+- 錯題回顧、各科累計正確率(存在瀏覽器 localStorage)
+
+## 題庫
+
+| 級別 | 梯次 | 科目 | 題數 |
+|---|---|---|---|
+| 初級 | 114-4、115-1、115-2 | 人工智慧基礎概論、生成式AI應用與規劃 | 300 |
+| 中級 | 114-2、115-1 | 人工智慧技術應用與規劃、大數據處理分析與應用、機器學習技術與應用 | 300 |
+
+來源:[iPAS 官方公告試題](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)(含官方標準答案)。詳解由 AI(Claude Sonnet)生成,僅供學習參考。
+
+## 資料管線(重建題庫時才需要)
+
+```
+uv run scripts/download_pdfs.py     # 下載官方 12 份試題 PDF → data/raw/
+uv run scripts/parse_pdf.py         # 解析 PDF → data/questions-*.json + site/images/*.png
+uv run scripts/split_batches.py     # 切註解批次檔 → data/annotate/*.json
+# (由 AI agent 產出 data/annotate/out/*.json 註解)
+uv run scripts/build_site_data.py   # 合併註解 → site/data/questions-*.js
+```
+
+- `data/patches.json`:PDF 解析無法自動處理的人工修正(目前 1 題)
+- 新梯次試題公告後:把新 PDF 的 URL 加進 `download_pdfs.py` 的 `FILES`,重跑整條管線

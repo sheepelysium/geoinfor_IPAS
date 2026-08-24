@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iPAS AI應用規劃師 題庫練習</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="logo">iPAS 刷題</span>
+    <span class="logo-sub">AI應用規劃師 歷屆試題</span>
+    <nav>
+      <button id="nav-home" class="nav-btn active">練習</button>
+      <button id="nav-stats" class="nav-btn">統計</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 設定/開始畫面 -->
+  <section id="view-setup" class="view">
+    <div class="card setup-card">
+      <h1>開始練習</h1>
+      <div class="field">
+        <label>級別</label>
+        <div class="seg" id="level-seg">
+          <button data-level="junior" class="seg-btn active">初級</button>
+          <button data-level="middle" class="seg-btn">中級</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>科目範圍</label>
+        <div class="seg seg-wrap" id="subject-seg"></div>
+      </div>
+      <div class="field muted" id="pool-info"></div>
+      <button id="btn-start" class="primary big">隨機抽 20 題 開始</button>
+    </div>
+  </section>
+
+  <!-- 作答畫面 -->
+  <section id="view-quiz" class="view hidden">
+    <div class="quiz-head">
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <div class="quiz-meta">
+        <span id="quiz-pos"></span>
+        <span id="quiz-score"></span>
+        <button id="btn-quit" class="ghost small">結束</button>
+      </div>
+    </div>
+    <div class="card" id="question-card"></div>
+    <div class="quiz-foot">
+      <button id="btn-next" class="primary big hidden">下一題</button>
+    </div>
+  </section>
+
+  <!-- 結果畫面 -->
+  <section id="view-result" class="view hidden">
+    <div class="card result-card">
+      <h1 id="result-title"></h1>
+      <div id="result-score" class="score-ring"></div>
+      <div id="result-breakdown"></div>
+      <div class="row-gap">
+        <button id="btn-again" class="primary">再來 20 題</button>
+        <button id="btn-review" class="ghost">回顧錯題</button>
+        <button id="btn-home" class="ghost">回首頁</button>
+      </div>
+    </div>
+    <div id="review-list" class="hidden"></div>
+  </section>
+
+  <!-- 統計畫面 -->
+  <section id="view-stats" class="view hidden">
+    <div class="card">
+      <h1>作答統計</h1>
+      <div id="stats-content"></div>
+      <button id="btn-clear-stats" class="ghost small danger">清除統計資料</button>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">題庫來源:經濟部 iPAS 官方公告試題(初級 3 梯次、中級 2 梯次,共 600 題)。詳解由 AI 產生,僅供學習參考。</footer>
+
+<script src="data/questions-junior.js"></script>
+<script src="data/questions-middle.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

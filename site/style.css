@@ -1,0 +1,121 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
+  --good: #16a34a;
+  --good-bg: #ecfdf3;
+  --bad: #dc2626;
+  --bad-bg: #fef2f2;
+  --warn-bg: #fffbeb;
+  --warn-line: #f59e0b;
+}
+
+body {
+  font-family: "Segoe UI", "Microsoft JhengHei", "PingFang TC", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+.topbar { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.topbar-inner { max-width: 860px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+.logo { font-weight: 700; font-size: 1.05rem; color: var(--brand); }
+.logo-sub { color: var(--muted); font-size: .85rem; flex: 1; }
+.nav-btn { background: none; border: none; font-size: .95rem; padding: 6px 12px; cursor: pointer; color: var(--muted); border-radius: 8px; }
+.nav-btn.active { color: var(--brand); font-weight: 600; background: #eff6ff; }
+
+main { max-width: 860px; margin: 0 auto; padding: 20px 16px 60px; }
+.hidden { display: none !important; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.card h1 { font-size: 1.3rem; margin-bottom: 18px; }
+
+/* ---- 設定 ---- */
+.setup-card { max-width: 520px; margin: 40px auto 0; }
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 6px; }
+.seg { display: flex; gap: 8px; }
+.seg-wrap { flex-wrap: wrap; }
+.seg-btn { flex: 1; min-width: 120px; padding: 10px 14px; border: 1px solid var(--line); background: #fff; border-radius: 10px; cursor: pointer; font-size: .95rem; color: var(--ink); }
+.seg-btn.active { border-color: var(--brand); background: #eff6ff; color: var(--brand); font-weight: 600; }
+.muted { color: var(--muted); font-size: .85rem; }
+
+button.primary { background: var(--brand); color: #fff; border: none; border-radius: 10px; padding: 10px 22px; font-size: 1rem; cursor: pointer; }
+button.primary:hover { background: var(--brand-dark); }
+button.primary.big { width: 100%; padding: 13px; font-size: 1.05rem; }
+button.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 9px 18px; font-size: .95rem; cursor: pointer; }
+button.ghost:hover { background: #f9fafb; }
+button.small { padding: 4px 12px; font-size: .85rem; }
+button.danger { color: var(--bad); }
+
+/* ---- 作答 ---- */
+.quiz-head { margin-bottom: 14px; }
+.progress-track { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+#progress-bar { height: 100%; width: 0; background: var(--brand); transition: width .3s; }
+.quiz-meta { display: flex; align-items: center; gap: 14px; margin-top: 8px; font-size: .9rem; color: var(--muted); }
+#quiz-score { flex: 1; }
+
+.q-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.tag { font-size: .75rem; padding: 2px 10px; border-radius: 99px; background: #eef2ff; color: #4338ca; }
+.tag.src { background: #f3f4f6; color: var(--muted); }
+
+.q-context { background: #f8fafc; border: 1px dashed var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; font-size: .93rem; white-space: pre-wrap; }
+.q-context .ctx-label { font-size: .75rem; color: var(--brand); font-weight: 600; display: block; margin-bottom: 4px; }
+
+.q-stem { font-size: 1.05rem; font-weight: 600; margin-bottom: 16px; }
+.q-fig { max-width: 100%; border: 1px solid var(--line); border-radius: 8px; margin: 10px 0; display: block; }
+
+.opt { display: flex; gap: 10px; align-items: flex-start; width: 100%; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; cursor: pointer; font-size: .97rem; font-family: inherit; line-height: 1.6; color: var(--ink); transition: border-color .15s, background .15s; }
+.opt:hover:not(:disabled) { border-color: var(--brand); background: #f8faff; }
+.opt:disabled { cursor: default; }
+.opt .opt-letter { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--line); display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.opt .opt-body { flex: 1; }
+.opt .opt-body img { max-width: 100%; }
+.opt.correct { border-color: var(--good); background: var(--good-bg); }
+.opt.correct .opt-letter { border-color: var(--good); background: var(--good); color: #fff; }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.opt.wrong .opt-letter { border-color: var(--bad); background: var(--bad); color: #fff; }
+.opt .opt-note { font-size: .87rem; color: var(--muted); margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--line); }
+.opt.correct .opt-note { color: #15803d; }
+.opt.wrong .opt-note { color: #b91c1c; }
+
+.verdict { font-weight: 700; margin: 6px 0 12px; font-size: 1.02rem; }
+.verdict.ok { color: var(--good); }
+.verdict.no { color: var(--bad); }
+
+.explain { background: #f8fafc; border-left: 3px solid var(--brand); border-radius: 0 10px 10px 0; padding: 14px 16px; margin-top: 14px; font-size: .93rem; }
+.explain h3 { font-size: .85rem; color: var(--brand); margin-bottom: 6px; }
+.explain .note { margin-top: 10px; background: var(--warn-bg); border-left: 3px solid var(--warn-line); padding: 8px 12px; border-radius: 0 8px 8px 0; }
+.explain.pending { border-left-color: var(--muted); color: var(--muted); }
+
+.quiz-foot { margin-top: 16px; }
+
+/* ---- 結果 ---- */
+.result-card { text-align: center; max-width: 520px; margin: 30px auto 20px; }
+.score-ring { font-size: 3rem; font-weight: 800; margin: 10px 0 4px; color: var(--brand); }
+#result-breakdown { color: var(--muted); font-size: .92rem; margin-bottom: 20px; }
+#result-breakdown table { margin: 10px auto 0; border-collapse: collapse; }
+#result-breakdown td, #result-breakdown th { padding: 4px 14px; border-bottom: 1px solid var(--line); font-size: .88rem; }
+.row-gap { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+#review-list .card { margin-bottom: 14px; }
+.review-q .q-stem { font-size: .98rem; }
+
+/* ---- 統計 ---- */
+#stats-content table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; }
+#stats-content th, #stats-content td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); font-size: .9rem; }
+#stats-content th { color: var(--muted); font-weight: 600; font-size: .82rem; }
+.acc-bar { display: inline-block; height: 8px; background: var(--brand); border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+
+.foot { text-align: center; color: var(--muted); font-size: .78rem; padding: 20px 16px 30px; max-width: 860px; margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .card { padding: 16px; }
+  .seg-btn { min-width: 100px; }
+}
