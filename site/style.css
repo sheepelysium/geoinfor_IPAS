@@ -319,9 +319,10 @@ button.danger { color: var(--red-pen); }
 }
 
 .foot {
-  text-align: center; color: var(--muted); font-size: .8rem;
+  text-align: center; color: var(--muted); font-size: .8rem; line-height: 1.9;
   font-family: var(--hand); padding: 8px 16px 36px; max-width: 780px; margin: 0 auto;
 }
+.foot a { color: var(--blue-pen); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
 @media (max-width: 640px) {
   html { font-size: 17px; }
