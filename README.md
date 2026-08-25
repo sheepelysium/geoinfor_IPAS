@@ -28,8 +28,18 @@ uv run scripts/download_pdfs.py     # 下載官方 12 份試題 PDF → data/raw
 uv run scripts/parse_pdf.py         # 解析 PDF → data/questions-*.json + site/images/*.png
 uv run scripts/split_batches.py     # 切註解批次檔 → data/annotate/*.json
 # (由 AI agent 產出 data/annotate/out/*.json 註解)
-uv run scripts/build_site_data.py   # 合併註解 → site/data/questions-*.js
+uv run scripts/build_site_data.py   # 合併註解+人工修正 → site/data/questions-*.js
+uv run scripts/audit.py             # 稽查題庫是否有跨題黏連污染
 ```
 
-- `data/patches.json`:PDF 解析無法自動處理的人工修正(目前 1 題)
+- `data/patches.json`:PDF 解析無法自動處理的**題目內容**人工修正(目前 14 筆,集中在中級的跨題組黏連)
+- `data/explanation-fixes.json`:**詳解**人工修正(改寫錯誤說明、補答案疑義與時效註記、清除過期註記),於 `build_site_data.py` 套用在 AI 註解之上,重跑註解 agent 不會被覆蓋
+- ⚠ `data/annotate/out/*.json` 是 **AI 原始輸出、未經修正**,可能含已被修正或已過期的內容;正確版本一律以 `build_site_data.py` 產出的 `site/data/questions-*.js` 為準,不要直接引用 `annotate/out`
 - 新梯次試題公告後:把新 PDF 的 URL 加進 `download_pdfs.py` 的 `FILES`,重跑整條管線
+
+### 詳解品質須知
+
+詳解由 AI 產生,**官方答案一律為準**。網站上有兩種註記:
+
+- **⚠ 答案疑義**(紅字):官方答案有討論空間、或選項界線模糊的題目,會說明其他選項為何也合理、以及應試時該怎麼判斷。仍依官方答案作答。
+- **⏳ 時效提醒**(藍字):法規與 AI 產品功能等時間敏感題,標明「以考試當期版本為準」並指向官方查證管道。這類題目未逐題附來源連結,不宜當作最新事實引用。

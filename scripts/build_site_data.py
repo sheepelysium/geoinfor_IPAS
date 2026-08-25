@@ -18,6 +18,24 @@ for f in sorted(ANN_DIR.glob("*.json")):
     annotations.update(data)
     print(f"讀入 {f.name}: {len(data)} 題註解")
 
+# 人工修正詳解(重跑註解 agent 也不會被蓋掉)
+fix_file = ROOT / "data" / "explanation-fixes.json"
+if fix_file.exists():
+    for fix in json.loads(fix_file.read_text(encoding="utf-8")):
+        ann = annotations.get(fix["id"])
+        if ann is None:
+            print(f"WARN 修正找不到題目 {fix['id']}")
+            continue
+        for key in fix.get("unset", []):
+            ann.pop(key, None)
+        for path, value in fix.get("set", {}).items():
+            if path.startswith("options."):
+                ann["options"][path.split(".", 1)[1]] = value
+            else:
+                ann[path] = value
+        changed = fix.get("unset", []) + list(fix.get("set", {}))
+        print(f"修正詳解 {fix['id']}: {changed}")
+
 for lvl in ["junior", "middle"]:
     qs = json.loads((ROOT / "data" / f"questions-{lvl}.json").read_text(encoding="utf-8"))
     missing = []
@@ -35,6 +53,7 @@ for lvl in ["junior", "middle"]:
             "approach": ann.get("approach", ""),
             "options": opts,
             **({"note": ann["note"]} if ann.get("note") else {}),
+            **({"timeliness": ann["timeliness"]} if ann.get("timeliness") else {}),
         }
     out = SITE_DATA / f"questions-{lvl}.js"
     payload = json.dumps(qs, ensure_ascii=False, separators=(",", ":"))
