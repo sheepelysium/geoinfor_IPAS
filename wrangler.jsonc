@@ -1,0 +1,9 @@
+{
+  // 純靜態網站:沒有 Worker 程式碼, 只發布 site/ 目錄
+  // 部署: npx wrangler deploy
+  "name": "ipas-quiz",
+  "compatibility_date": "2026-08-25",
+  "assets": {
+    "directory": "./site"
+  }
+}
