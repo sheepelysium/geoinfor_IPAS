@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方向E:像素RPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #10102a;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 8%, rgba(255,255,255,.4) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 50% 28%, rgba(255,255,255,.3) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 90% 35%, rgba(255,255,255,.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 8% 40%, rgba(255,255,255,.3) 0 1px, transparent 1.5px);
+  color: #e8e8f0;
+  font-family: "Microsoft JhengHei", sans-serif;
+  font-weight: 700;
+  padding: 30px 12px 70px;
+  line-height: 1.8;
+  image-rendering: pixelated;
+}
+.px { font-family: "Press Start 2P", monospace; font-weight: 400; }
+.frame {
+  max-width: 640px; margin: 0 auto;
+}
+/* 像素邊框對話框 */
+.box {
+  background: #181840;
+  border: 4px solid #e8e8f0;
+  box-shadow: 0 0 0 4px #10102a, 0 0 0 8px #5555aa, 8px 8px 0 8px rgba(0,0,0,.4);
+  border-radius: 2px;
+  padding: 16px 18px;
+  margin-bottom: 34px;
+  position: relative;
+}
+.enemy-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+.enemy-name { font-size: 1rem; letter-spacing: .1em; }
+.enemy-name .lv { color: #ffd75f; font-size: .72rem; margin-left: .6em; }
+.hpbar { width: 220px; }
+.hpbar .label { font-size: .6rem; color: #9f9fd0; display: flex; justify-content: space-between; }
+.hpbar .track { height: 12px; border: 2px solid #e8e8f0; background: #10102a; padding: 1px; }
+.hpbar .fill { height: 100%; width: 65%; background: linear-gradient(#7fe07f, #2fae2f); }
+.hpbar .fill.mine { width: 75%; background: linear-gradient(#ffd75f, #e0a020); }
+.stem { text-align: justify; font-size: .98rem; margin-top: 6px; }
+.src { color: #9f9fd0; font-size: .68rem; margin-top: 6px; }
+/* 指令選單 */
+.cmd { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; margin-top: 4px; }
+.copt {
+  display: flex; gap: 10px; background: none; border: none; font: inherit; color: #e8e8f0;
+  text-align: left; cursor: pointer; padding: 8px 6px; line-height: 1.65; font-size: .93rem;
+  align-items: baseline;
+}
+.copt .cur { color: transparent; }
+.copt:hover .cur { color: #ffd75f; }
+.copt:hover { color: #fff; }
+.copt.hit .cur, .copt.miss .cur { color: inherit; }
+.copt.hit { color: #7fe07f; }
+.copt.miss { color: #ff6f7f; }
+.copt .why { display: block; font-size: .75rem; font-weight: 400; color: #9f9fd0; }
+.copt.hit .why { color: #6fbf7f; }
+.copt.miss .why { color: #cf6f77; }
+.narr { border-top: 4px solid #e8e8f0; margin-top: 14px; padding-top: 12px; font-size: .93rem; }
+.narr .dmg { color: #ff6f7f; }
+.narr .heal { color: #7fe07f; }
+.blink { animation: bl 1s steps(1) infinite; color: #ffd75f; }
+@keyframes bl { 50% { opacity: 0; } }
+.divider { text-align: center; color: #5555aa; font-size: .7rem; letter-spacing: .3em; margin: 30px 0; }
+.approach-box { background: #241a3a; border-color: #ffd75f; box-shadow: 0 0 0 4px #10102a, 0 0 0 8px #a07820, 8px 8px 0 8px rgba(0,0,0,.4); }
+.approach-box .t { color: #ffd75f; font-size: .7rem; letter-spacing: .25em; margin-bottom: 8px; }
+.approach-box p { font-size: .88rem; font-weight: 400; text-align: justify; }
+@media (max-width: 560px) { .cmd { grid-template-columns: 1fr; } .enemy-row { flex-direction: column; gap: 8px; } }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- 敵人(題目)出現 -->
+  <div class="box">
+    <div class="enemy-row">
+      <div class="enemy-name">野生的 SHAP值解讀題 <span class="lv px">Lv.28</span></div>
+      <div class="hpbar">
+        <div class="label"><span class="px">ENEMY 13/20</span></div>
+        <div class="track"><div class="fill"></div></div>
+        <div class="label" style="margin-top:6px"><span class="px">YOU 答對5</span><span class="px">HP 75%</span></div>
+        <div class="track"><div class="fill mine"></div></div>
+      </div>
+    </div>
+    <div class="stem">使用XGBoost建立信用風險評分模型，並以SHAP解釋某申請人的預測結果。summary plot顯示「月收入」的SHAP值為-2.3，下列解讀何者正確？</div>
+    <div class="src px">115-1 #28 · AI TECH</div>
+  </div>
+
+  <!-- 指令選單 -->
+  <div class="box">
+    <div class="cmd">
+      <button class="copt"><span class="cur">▶</span><span>Ａ 使違約預測機率降低了2.3%</span></button>
+      <button class="copt"><span class="cur">▶</span><span>Ｂ 負值代表特徵不重要應移除</span></button>
+      <button class="copt"><span class="cur">▶</span><span>Ｃ 相對base value往負方向推2.3單位</span></button>
+      <button class="copt"><span class="cur">▶</span><span>Ｄ 負債比率是影響最大的特徵</span></button>
+    </div>
+  </div>
+
+  <div class="divider">▼▼ 答錯後 ▼▼</div>
+
+  <!-- 戰鬥結果 -->
+  <div class="box">
+    <div class="enemy-name" style="margin-bottom:8px">野生的 L1/L2正則化題 <span class="lv px">Lv.04</span></div>
+    <div class="cmd">
+      <button class="copt"><span class="cur">▶</span><span>Ａ 權重愈多正確率愈高<span class="why">數量與正確率無必然關係;L1是拿來稀疏化的</span></span></button>
+      <button class="copt miss"><span class="cur">✖</span><span>Ｂ L2稱為Lasso正則化<span class="why">張冠李戴——Lasso是L1;L2叫Ridge</span></span></button>
+      <button class="copt hit"><span class="cur">★</span><span>Ｃ L1以權重絕對值控制複雜度<span class="why">正解:絕對值懲罰會把不重要的權重壓到零</span></span></button>
+      <button class="copt"><span class="cur">▶</span><span>Ｄ L2會將權重趨近於零<span class="why">相反了,壓到「恰好為零」的是L1</span></span></button>
+    </div>
+    <div class="narr">
+      你使用了「Ｂ」…效果不佳!<br>
+      <span class="dmg">受到了 混淆傷害!HP -5%</span>　敵人弱點是 <span class="heal">Ｃ</span>　<span class="blink">▼</span>
+    </div>
+  </div>
+
+  <div class="box approach-box">
+    <div class="t px">HINT — 解題思路</div>
+    <p>L1＝Lasso＝絕對值懲罰＝稀疏(權重歸零);L2＝Ridge＝平方懲罰＝平滑縮小。記「一(1)刀切到零」即可分辨。下次遇到同種敵人就不會再吃這招了。</p>
+  </div>
+
+</div>
+</body>
+</html>

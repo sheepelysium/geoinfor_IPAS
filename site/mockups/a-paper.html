@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方向A:紙本考卷</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #b8b0a1; }
+body {
+  font-family: "Noto Serif TC", "PMingLiU", "MingLiU", serif;
+  color: #1a1611;
+  line-height: 1.9;
+  padding: 28px 12px 60px;
+}
+.sheet {
+  max-width: 720px; margin: 0 auto;
+  background: #f7f2e7;
+  background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgba(26,22,17,.028) 27px 28px);
+  box-shadow: 0 2px 0 rgba(26,22,17,.35), 0 14px 34px rgba(26,22,17,.28);
+  padding: 44px 52px 56px;
+}
+.exam-head { text-align: center; border-bottom: 3px double #1a1611; padding-bottom: 14px; margin-bottom: 6px; }
+.exam-head h1 { font-size: 1.25rem; font-weight: 900; letter-spacing: .35em; }
+.exam-head .sub { font-size: .8rem; letter-spacing: .18em; margin-top: 2px; }
+.meta-row {
+  display: flex; justify-content: space-between; font-size: .78rem;
+  border-bottom: 1px solid #1a1611; padding: 6px 2px; margin-bottom: 30px; letter-spacing: .06em;
+}
+.q { margin-bottom: 44px; }
+.q-no {
+  float: left; font-weight: 900; font-size: 1.02rem;
+  border: 1.6px solid #1a1611; width: 2em; height: 2em; line-height: 1.9em;
+  text-align: center; margin: 3px 14px 2px 0;
+}
+.q-stem { font-size: 1.02rem; font-weight: 600; text-align: justify; }
+.src { font-size: .72rem; letter-spacing: .1em; color: #6d6353; margin-top: 2px; }
+.opts { margin-top: 18px; clear: both; }
+.opt {
+  display: block; width: 100%; text-align: left; background: none; border: none;
+  font: inherit; color: inherit; cursor: pointer; padding: 7px 8px 7px 4px;
+  font-size: .98rem; line-height: 1.8; text-align: justify; position: relative;
+}
+.opt:hover .k { text-decoration: underline; text-underline-offset: 5px; }
+.opt .k { font-weight: 600; margin-right: .6em; }
+/* 批改記號 */
+.opt.hit .k::before, .opt.miss .k::before {
+  position: absolute; left: -6px; top: 0px; font-size: 1.55rem; line-height: 1.5;
+  font-weight: 400; color: #c1272d; opacity: .92;
+}
+.opt.hit .k::before { content: "○"; transform: scale(1.35); transform-origin: left center; }
+.opt.miss .k::before { content: "✗"; }
+.opt.dim { color: #8a8070; }
+.note { font-size: .86rem; color: #a02328; margin: 2px 0 0 1.9em; line-height: 1.75; }
+.marking {
+  margin-top: 26px; border-top: 1.6px solid #c1272d; padding: 14px 4px 0;
+  color: #a02328; font-size: .92rem; text-align: justify;
+}
+.marking .label {
+  display: inline-block; border: 1.4px solid #c1272d; padding: 0 .55em; font-size: .78rem;
+  letter-spacing: .3em; margin-right: .8em; font-weight: 600;
+}
+.stamp {
+  float: right; border: 2.2px solid #c1272d; color: #c1272d; font-weight: 900;
+  padding: .05em .5em; transform: rotate(-7deg); letter-spacing: .2em; font-size: 1rem; margin-top: -4px;
+}
+.divider { text-align: center; letter-spacing: .5em; color: #6d6353; font-size: .8rem; margin: 34px 0; }
+@media (max-width: 640px) { .sheet { padding: 30px 22px 40px; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="exam-head">
+    <h1>ＡＩ應用規劃師</h1>
+    <div class="sub">中級能力鑑定・模擬練習卷</div>
+  </div>
+  <div class="meta-row">
+    <span>科目一　人工智慧技術應用與規劃</span>
+    <span>第 7 / 20 題　✗ 累計答對 5</span>
+  </div>
+
+  <!-- 作答前 -->
+  <div class="q">
+    <div class="q-no">7</div>
+    <div class="q-stem">一位資料科學家使用XGBoost建立信用風險評分模型，並使用SHAP解釋模型對某申請人的預測結果。SHAP summary plot顯示該樣本中「月收入」的SHAP值為-2.3，關於對SHAP值的解讀，下列敘述何者正確？
+      <div class="src">─ 115年第一次・原卷第28題</div>
+    </div>
+    <div class="opts">
+      <button class="opt"><span class="k">（Ａ）</span>「月收入」的SHAP值-2.3代表該特徵使此申請人的違約預測機率降低了2.3%</button>
+      <button class="opt"><span class="k">（Ｂ）</span>SHAP值為負代表該特徵對模型整體來說是不重要的特徵，應考慮從模型中移除</button>
+      <button class="opt"><span class="k">（Ｃ）</span>代表相對於基準值（base value），此特徵將模型輸出值往負方向推移了2.3個單位</button>
+      <button class="opt"><span class="k">（Ｄ）</span>SHAP值+1.8代表負債比率是整個訓練集中對違約影響最大的特徵</button>
+    </div>
+  </div>
+
+  <div class="divider">◆　◆　◆　（下方為答錯後的樣子）　◆　◆　◆</div>
+
+  <!-- 答錯後:紅筆批改 -->
+  <div class="q">
+    <span class="stamp">再 練</span>
+    <div class="q-no">8</div>
+    <div class="q-stem">關於資料正則化（Regularization）L1、L2方法，下列敘述何者正確？
+      <div class="src">─ 114年第四梯次・原卷第4題</div>
+    </div>
+    <div class="opts">
+      <button class="opt dim"><span class="k">（Ａ）</span>L1權重個數愈多，愈可以提升模型的正確率
+        <div class="note">權重數量與正確率無必然關係,L1反而是用來稀疏化權重。</div></button>
+      <button class="opt miss"><span class="k">（Ｂ）</span>L2稱為Lasso正則化
+        <div class="note">張冠李戴——Lasso是L1;L2叫Ridge。</div></button>
+      <button class="opt hit"><span class="k">（Ｃ）</span>L1運用減少權重的絕對值來控制模型的複雜度
+        <div class="note">正解。L1懲罰項即權重絕對值之和,會把不重要的權重壓到零。</div></button>
+      <button class="opt dim"><span class="k">（Ｄ）</span>L2較L1正則化方法會將特徵權重趨近於零
+        <div class="note">相反了,將權重壓到「恰好為零」的是L1。</div></button>
+    </div>
+    <div class="marking">
+      <span class="label">眉批</span>這題考L1/L2的名稱與效果對應:L1=Lasso=絕對值懲罰=稀疏(權重歸零);L2=Ridge=平方懲罰=平滑縮小。記「一(1)刀切到零」即可分辨。
+    </div>
+  </div>
+</div>
+</body>
+</html>

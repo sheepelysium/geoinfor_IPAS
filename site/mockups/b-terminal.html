@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方向B:終端機刷題機</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #101014;
+  color: #9a9aa3;
+  font-family: "Cascadia Code", "Cascadia Mono", Consolas, "Microsoft JhengHei", monospace;
+  line-height: 1.85;
+  min-height: 100vh;
+  display: flex; justify-content: center;
+  padding: 40px 16px 80px;
+  font-size: 15px;
+}
+.wrap { width: 100%; max-width: 760px; }
+.bar {
+  display: flex; justify-content: space-between; align-items: baseline;
+  color: #55555e; font-size: .82rem; margin-bottom: 42px;
+}
+.bar .logo { color: #e2b714; }
+.bar .logo b { color: #d1d0c5; font-weight: 600; }
+.progress { color: #55555e; font-size: .82rem; margin-bottom: 10px; }
+.progress .fill { color: #e2b714; }
+.subject { color: #55555e; font-size: .8rem; margin-bottom: 26px; }
+.subject::before { content: "// "; }
+.stem { color: #d1d0c5; font-size: 1.06rem; margin-bottom: 30px; text-align: justify; }
+.opt {
+  display: flex; gap: 14px; width: 100%; text-align: left; background: none;
+  border: none; border-left: 2px solid transparent; font: inherit; color: #9a9aa3;
+  cursor: pointer; padding: 9px 12px; line-height: 1.75; align-items: baseline;
+}
+.opt:hover { color: #d1d0c5; border-left-color: #e2b714; background: #16161c; }
+.opt .num { color: #55555e; flex-shrink: 0; }
+.opt:hover .num { color: #e2b714; }
+.opt.hit { color: #d1d0c5; border-left-color: #7fbf7f; background: #141814; }
+.opt.hit .num { color: #7fbf7f; }
+.opt.miss { color: #ca4754; border-left-color: #ca4754; background: #1a1416; text-decoration: line-through; text-decoration-color: rgba(202,71,84,.5); }
+.opt .why { display: block; font-size: .8rem; color: #55555e; margin-top: 3px; text-decoration: none; }
+.opt.hit .why { color: #6f9f6f; }
+.opt.miss .why { color: #9c5a61; }
+.keys { margin-top: 34px; color: #3d3d45; font-size: .78rem; }
+.keys kbd {
+  border: 1px solid #3d3d45; border-radius: 3px; padding: 0 .45em; margin: 0 .15em;
+  font: inherit; color: #55555e;
+}
+.result { margin-top: 40px; border-top: 1px solid #26262e; padding-top: 22px; }
+.result .verdict { color: #ca4754; margin-bottom: 12px; }
+.result .verdict::before { content: "✗ "; }
+.approach { color: #8b8b94; font-size: .88rem; text-align: justify; }
+.approach::before { content: "── 解題思路\A"; white-space: pre; color: #e2b714; display: block; margin-bottom: 6px; font-size: .8rem; }
+.sep { margin: 46px 0; color: #26262e; overflow: hidden; white-space: nowrap; font-size: .8rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <span class="logo">▍<b>ipas</b>.quiz — 中級</span>
+    <span>streak 5 · acc 71%</span>
+  </div>
+
+  <!-- 作答前 -->
+  <div class="progress"><span class="fill">██████░░░░░░░░░░░░░░</span>  7/20</div>
+  <div class="subject">人工智慧技術應用與規劃 · 115-1 #28</div>
+  <div class="stem">一位資料科學家使用 XGBoost 建立信用風險評分模型，並使用 SHAP 解釋模型對某申請人的預測結果。SHAP summary plot 顯示該樣本中「月收入」的 SHAP 值為 -2.3，關於對 SHAP 值的解讀，下列敘述何者正確？</div>
+  <button class="opt"><span class="num">[1]</span>「月收入」的 SHAP 值 -2.3 代表該特徵使此申請人的違約預測機率降低了 2.3%</button>
+  <button class="opt"><span class="num">[2]</span>SHAP 值為負代表該特徵對模型整體來說是不重要的特徵，應考慮從模型中移除</button>
+  <button class="opt"><span class="num">[3]</span>代表相對於基準值（base value），此特徵將模型輸出值往負方向推移了 2.3 個單位</button>
+  <button class="opt"><span class="num">[4]</span>SHAP 值 +1.8 代表負債比率是整個訓練集中對違約影響最大的特徵</button>
+  <div class="keys">按 <kbd>1</kbd>–<kbd>4</kbd> 作答 · <kbd>enter</kbd> 下一題 · <kbd>esc</kbd> 結束</div>
+
+  <div class="sep">────────────────────── 答錯後的樣子 ──────────────────────</div>
+
+  <!-- 答錯後 -->
+  <div class="progress"><span class="fill">███████░░░░░░░░░░░░░</span>  8/20</div>
+  <div class="subject">機器學習技術與應用 · 114-4 #4</div>
+  <div class="stem">關於資料正則化（Regularization）L1、L2 方法，下列敘述何者正確？</div>
+  <button class="opt"><span class="num">[1]</span>L1 權重個數愈多，愈可以提升模型的正確率
+    <span class="why">權重數量與正確率無必然關係;L1 反而是用來稀疏化權重</span></button>
+  <button class="opt miss"><span class="num">[2]</span>L2 稱為 Lasso 正則化
+    <span class="why">張冠李戴 — Lasso 是 L1;L2 叫 Ridge</span></button>
+  <button class="opt hit"><span class="num">[3]</span>L1 運用減少權重的絕對值來控制模型的複雜度
+    <span class="why">正解 — L1 懲罰項即權重絕對值之和,會把不重要的權重壓到零</span></button>
+  <button class="opt"><span class="num">[4]</span>L2 較 L1 正則化方法會將特徵權重趨近於零
+    <span class="why">相反 — 將權重壓到「恰好為零」的是 L1</span></button>
+  <div class="result">
+    <div class="verdict">wrong — 正解 [3]</div>
+    <div class="approach">這題考 L1/L2 的名稱與效果對應:L1 = Lasso = 絕對值懲罰 = 稀疏(權重歸零);L2 = Ridge = 平方懲罰 = 平滑縮小。記「一(1)刀切到零」即可分辨。</div>
+  </div>
+</div>
+</body>
+</html>

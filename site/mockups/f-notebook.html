@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方向F:讀書筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #e9e4da;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: #2b2822;
+  line-height: 1.85;
+  padding: 36px 12px 80px;
+}
+.page {
+  max-width: 680px; margin: 0 auto;
+  background: #fbfaf6;
+  background-image:
+    linear-gradient(rgba(90,140,180,.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(90,140,180,.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(43,40,34,.2), 0 12px 28px rgba(43,40,34,.18);
+  padding: 40px 44px 56px;
+  position: relative;
+}
+/* 紙膠帶 */
+.tape {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+  width: 150px; height: 30px; background: rgba(120,180,170,.55);
+  box-shadow: 0 1px 2px rgba(0,0,0,.12);
+}
+.tape::before, .tape::after { content:""; position:absolute; top:0; bottom:0; width:4px; background: rgba(255,255,255,.35); }
+.tape::before { left: 0; } .tape::after { right: 0; }
+h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: .08em; margin-bottom: 4px; }
+h1 .date { font-family: "LXGW WenKai TC", cursive; font-weight: 400; color: #8a8272; font-size: .85rem; margin-left: 10px; }
+.progress-hand { font-family: "LXGW WenKai TC", cursive; color: #4a68a8; font-size: .95rem; margin-bottom: 26px; }
+.qnum {
+  display: inline-block; background: #2b2822; color: #fbfaf6; font-weight: 700;
+  padding: 0 10px; border-radius: 2px; margin-bottom: 10px; font-size: .85rem; letter-spacing: .1em;
+}
+.qnum small { opacity: .65; font-weight: 400; margin-left: 8px; letter-spacing: .05em; }
+.stem { font-size: 1.02rem; font-weight: 500; text-align: justify; margin-bottom: 20px; }
+.opt {
+  display: flex; gap: 10px; width: 100%; background: none; border: none; font: inherit;
+  color: inherit; cursor: pointer; text-align: left; padding: 7px 4px; line-height: 1.8;
+  font-size: .96rem; align-items: baseline;
+}
+.opt .k { font-weight: 700; flex-shrink: 0; }
+.opt:hover .body { background: linear-gradient(transparent 55%, rgba(150,190,255,.45) 55% 92%, transparent 92%); }
+/* 螢光筆:正解 */
+.opt.hit .body { background: linear-gradient(transparent 52%, rgba(255,220,90,.75) 52% 94%, transparent 94%); font-weight: 700; }
+/* 紅筆刪除:選錯的 */
+.opt.miss .body { text-decoration: line-through wavy rgba(200,60,50,.75) 1.5px; color: #8a8272; }
+.anno {
+  font-family: "LXGW WenKai TC", cursive; font-size: .9rem; color: #b0392f;
+  margin: -2px 0 4px 2.1em; line-height: 1.7;
+}
+.anno.blue { color: #4a68a8; }
+.anno::before { content: "↳ "; }
+/* 便利貼:解題思路 */
+.sticky {
+  margin: 30px auto 0; max-width: 480px;
+  background: #fff9c2;
+  box-shadow: 1px 3px 8px rgba(43,40,34,.22);
+  transform: rotate(-1.2deg);
+  padding: 18px 22px 22px;
+  font-family: "LXGW WenKai TC", cursive; font-size: .96rem; line-height: 1.9; color: #4a4638;
+}
+.sticky .t { font-weight: 700; color: #b0392f; letter-spacing: .2em; margin-bottom: 6px; font-size: .88rem; }
+.sticky .fold {
+  float: right; width: 0; height: 0; margin: -18px -22px 0 0;
+  border-left: 22px solid transparent; border-top: 22px solid #e9e4da;
+  filter: drop-shadow(-2px 2px 1px rgba(0,0,0,.08));
+}
+.divider { text-align: center; color: #8a8272; font-family: "LXGW WenKai TC", cursive; margin: 40px 0 30px; }
+.star { color: #d9a520; letter-spacing: .3em; }
+@media (max-width: 600px) { .page { padding: 32px 20px 44px; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="tape"></div>
+  <h1>中級刷題・全科混合<span class="date">8/24 (日) 第3輪</span></h1>
+  <div class="progress-hand">今天目標20題,目前 7/20,答對5題 ✿</div>
+
+  <!-- 作答前 -->
+  <div class="qnum">Q7<small>115年第一次 · 原卷#28 · 人工智慧技術應用與規劃</small></div>
+  <div class="stem">使用XGBoost建立信用風險評分模型，並以SHAP解釋某申請人的預測結果。SHAP summary plot顯示「月收入」的SHAP值為-2.3，關於SHAP值的解讀，下列敘述何者正確？</div>
+  <button class="opt"><span class="k">A.</span><span class="body">代表該特徵使此申請人的違約預測機率降低了2.3%</span></button>
+  <button class="opt"><span class="k">B.</span><span class="body">SHAP值為負代表該特徵不重要，應考慮從模型中移除</span></button>
+  <button class="opt"><span class="k">C.</span><span class="body">代表相對於基準值（base value），此特徵將模型輸出值往負方向推移2.3個單位</span></button>
+  <button class="opt"><span class="k">D.</span><span class="body">代表負債比率是整個訓練集中對違約影響最大的特徵</span></button>
+
+  <div class="divider">✁ - - - - - - - - 下面是答錯後的樣子 - - - - - - - - ✁</div>
+
+  <!-- 答錯後:筆記批註 -->
+  <div class="qnum">Q8<small>114年第四梯次 · 原卷#4 · 機器學習</small><span class="star">　★重點</span></div>
+  <div class="stem">關於資料正則化（Regularization）L1、L2方法，下列敘述何者正確？</div>
+  <button class="opt"><span class="k">A.</span><span class="body">L1權重個數愈多，愈可以提升模型的正確率</span></button>
+  <div class="anno blue">權重數量跟正確率沒有必然關係,L1反而是用來稀疏化的</div>
+  <button class="opt miss"><span class="k">B.</span><span class="body">L2稱為Lasso正則化</span></button>
+  <div class="anno">我選錯的!張冠李戴——Lasso是L1,L2叫Ridge</div>
+  <button class="opt hit"><span class="k">C.</span><span class="body">L1運用減少權重的絕對值來控制模型的複雜度</span></button>
+  <div class="anno blue">正解!L1懲罰＝權重絕對值之和,會把不重要的權重壓到零</div>
+  <button class="opt"><span class="k">D.</span><span class="body">L2較L1正則化方法會將特徵權重趨近於零</span></button>
+  <div class="anno blue">相反了,壓到「恰好為零」的是L1</div>
+
+  <div class="sticky">
+    <div class="fold"></div>
+    <div class="t">✎ 解題思路</div>
+    L1＝Lasso＝絕對值懲罰＝稀疏(權重歸零)<br>
+    L2＝Ridge＝平方懲罰＝平滑縮小<br>
+    背法:「一(1)刀切到零」→ 會切到零的是L1!
+  </div>
+</div>
+</body>
+</html>

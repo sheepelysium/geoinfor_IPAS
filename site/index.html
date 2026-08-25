@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>iPAS AI應用規劃師 題庫練習</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -46,13 +49,11 @@
       <div class="quiz-meta">
         <span id="quiz-pos"></span>
         <span id="quiz-score"></span>
+        <button id="btn-next" class="primary hidden">下一題</button>
         <button id="btn-quit" class="ghost small">結束</button>
       </div>
     </div>
     <div class="card" id="question-card"></div>
-    <div class="quiz-foot">
-      <button id="btn-next" class="primary big hidden">下一題</button>
-    </div>
   </section>
 
   <!-- 結果畫面 -->
@@ -81,6 +82,17 @@
 </main>
 
 <footer class="foot">題庫來源:經濟部 iPAS 官方公告試題(初級 3 梯次、中級 2 梯次,共 600 題)。詳解由 AI 產生,僅供學習參考。</footer>
+
+<!-- 手帳風確認對話框 -->
+<div id="modal" class="modal-overlay hidden">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-msg">
+    <p id="modal-msg"></p>
+    <div class="row-gap">
+      <button id="modal-ok" class="primary">確定</button>
+      <button id="modal-cancel" class="ghost">取消</button>
+    </div>
+  </div>
+</div>
 
 <script src="data/questions-junior.js"></script>
 <script src="data/questions-middle.js"></script>

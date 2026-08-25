@@ -50,6 +50,35 @@
   }
 
   // ---------- 統計儲存 ----------
+  function showConfirm(msg, onOk) {
+    var modal = $("modal");
+    var opener = document.activeElement;
+    $("modal-msg").textContent = msg;
+    modal.classList.remove("hidden");
+    $("modal-ok").focus();
+
+    function close(restoreFocus) {
+      modal.classList.add("hidden");
+      document.removeEventListener("keydown", onKey, true);
+      if (restoreFocus !== false && opener && opener.focus) opener.focus();
+    }
+    function onKey(e) {
+      if (e.key === "Escape") { e.preventDefault(); close(); return; }
+      if (e.key !== "Tab") return;
+      // 焦點鎖在對話框內的兩顆按鈕之間
+      var f = [$("modal-ok"), $("modal-cancel")];
+      var i = f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(i + (e.shiftKey ? f.length - 1 : 1) + f.length) % f.length].focus();
+    }
+    document.addEventListener("keydown", onKey, true);
+
+    // 確定後畫面會切換, 原開啟按鈕多半已隱藏, 故不還原焦點, 改由 onOk 決定落點
+    $("modal-ok").onclick = function () { close(false); onOk(); };
+    $("modal-cancel").onclick = function () { close(); };
+    modal.onclick = function (e) { if (e.target === modal) close(); };
+  }
+
   function loadStats() {
     try { return JSON.parse(localStorage.getItem(STORE_KEY)) || { attempts: [] }; }
     catch (e) { return { attempts: [] }; }
@@ -176,11 +205,12 @@
 
     var area = $("answer-area");
     var html = '<div class="verdict ' + (correct ? "ok" : "no") + '">'
-      + (correct ? "✔ 答對了!" : "✘ 答錯了")
+      + (correct ? "○ 答對!" : "✗ 答錯了,記下來——")
       + "</div>";
     if (q.explanation && q.explanation.approach) {
       html += '<div class="explain"><h3>解題思路</h3>' + esc(q.explanation.approach);
       if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
+      if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
       html += "</div>";
     } else {
       html += '<div class="explain pending">此題 AI 詳解尚未生成。</div>';
@@ -276,6 +306,7 @@
         if (q.explanation && q.explanation.approach) {
           html += '<div class="explain"><h3>解題思路</h3>' + esc(q.explanation.approach);
           if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
+          if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
           html += "</div>";
         }
         return html + "</div>";
@@ -342,7 +373,11 @@
   $("btn-start").onclick = startQuiz;
   $("btn-next").onclick = next;
   $("btn-quit").onclick = function () {
-    if (confirm("要結束這回合嗎?未完成的作答不會計入統計。")) show("view-setup");
+    showConfirm("要結束這回合嗎?未完成的作答不會計入統計。", function () {
+      renderSetup();
+      show("view-setup");
+      $("btn-start").focus();
+    });
   };
   $("btn-again").onclick = startQuiz;
   $("btn-review").onclick = renderReview;
@@ -350,7 +385,11 @@
   $("nav-home").onclick = function () { renderSetup(); show("view-setup"); };
   $("nav-stats").onclick = renderStats;
   $("btn-clear-stats").onclick = function () {
-    if (confirm("確定清除所有作答統計?")) { localStorage.removeItem(STORE_KEY); renderStats(); }
+    showConfirm("確定清除所有作答統計?", function () {
+      localStorage.removeItem(STORE_KEY);
+      renderStats();
+      $("nav-stats").focus();
+    });
   };
 
   renderSetup();
