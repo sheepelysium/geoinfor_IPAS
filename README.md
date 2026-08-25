@@ -21,6 +21,20 @@
 
 來源:[iPAS 官方公告試題](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)(含官方標準答案)。詳解由 AI(Claude Sonnet)生成,僅供學習參考。
 
+## 部署(Cloudflare Pages)
+
+網站是純靜態檔案,部署設定:
+
+| 欄位 | 值 |
+|---|---|
+| Framework preset | None |
+| Build command | (留空) |
+| Build output directory | `site` |
+
+推送到 `master` 後 Cloudflare 會自動重新部署。`site/_headers` 控制快取:題庫與程式碼不快取(改版立即生效),`images/` 長期快取。
+
+只有 `site/` 會被發布;`data/raw/` 的官方 PDF、`scripts/`、`data/annotate/` 都不會出現在網站上。
+
 ## 資料管線(重建題庫時才需要)
 
 ```
