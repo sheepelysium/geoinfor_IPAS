@@ -1,0 +1,522 @@
+[
+ {
+  "id": "guide_middle_s3_c1_q01",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若欲描述隨機變數在連續範圍內取值的機率分佈，最適合使用下列哪一種函數？",
+  "options": {
+   "A": "機率質量函數（PMF）",
+   "B": "條件機率",
+   "C": "機率密度函數（PDF）",
+   "D": "累積分佈函數（CDF）"
+  },
+  "answer": "C",
+  "official_explanation": "機率密度函數（PDF）用於描述連續型隨機變數於某個取值範圍內的機率分佈。與離散型隨機變數不同，連續變數在單一點的機率為零，PDF 通常透過積分計算區間內的機率，而 PMF 則用於離散型變數。累積分佈函數（CDF）則是累計機率的工具，而非直接描述機率密度。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q02",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若一個隨機變數服從伯努利分佈（Bernoulli Distribution），則該變數可能取值為下列哪一組？",
+  "options": {
+   "A": "任何實數",
+   "B": "0 或 1",
+   "C": "正整數",
+   "D": "任意整數"
+  },
+  "answer": "B",
+  "official_explanation": "伯努利分佈是典型的二元分佈，僅有兩種可能結果，通常以 0 和 1 表示，例如成功與失敗、點擊與未點擊。此分佈是多數二元分類模型（如邏輯迴歸）的理論基礎。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q03",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在主成分分析（PCA）中，常使用哪一種矩陣分解技術來找出資料的主軸方向？",
+  "options": {
+   "A": "矩陣求逆",
+   "B": "矩陣轉置",
+   "C": "特徵值分解",
+   "D": "條件機率分解"
+  },
+  "answer": "C",
+  "official_explanation": "PCA 透過對協方差矩陣進行特徵值分解，找出最大變異方向，並以此降低維度並保留最重要的資訊。這能讓資料投影到較少的維度上，同時盡可能維持原始資料的變異。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q04",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若想將高維資料映射至較低維度空間，同時保留資料的主要變異，常用下列哪一種方法？",
+  "options": {
+   "A": "邊際機率估計",
+   "B": "矩陣轉置",
+   "C": "主成分分析",
+   "D": "累積機率計算"
+  },
+  "answer": "C",
+  "official_explanation": "PCA 是常用的維度簡化工具，透過線性變換找出資料中變異最大的方向，將原始高維度資料投影到較少維度上，達到資料壓縮與特徵提取的效果。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q05",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在梯度下降（Gradient Descent）中，「梯度」代表下列哪一項？",
+  "options": {
+   "A": "資料點個數",
+   "B": "模型精確度",
+   "C": "損失函數對參數的偏微分",
+   "D": "模型計算速度"
+  },
+  "answer": "C",
+  "official_explanation": "梯度是損失函數相對於模型參數的導數，能指引參數應往哪個方向調整以減少損失。梯度越大，表示調整幅度應越大，以快速降低誤差。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q06",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在進行假設檢定時，顯著水準（α）表示什麼？",
+  "options": {
+   "A": "平均值的大小",
+   "B": "模型運算速度",
+   "C": "拒絕虛無假設時所容許的型一錯誤機率",
+   "D": "資料筆數多少"
+  },
+  "answer": "C",
+  "official_explanation": "顯著水準（α）是研究者事先設定的風險上限，代表當虛無假設為真時，錯誤拒絕該假設的容忍機率。常見設定為 0.05，意即容許 5%的型一錯誤。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q07",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若資料集中存在極端值，以下哪一種集中趨勢指標較不受影響？",
+  "options": {
+   "A": "平均數",
+   "B": "變異數",
+   "C": "標準差",
+   "D": "中位數"
+  },
+  "answer": "D",
+  "official_explanation": "平均數會受極端值拉動而偏離中心位置。中位數則是將資料排序後取中間值，不會受到少數極端值的嚴重影響，因此在偏態分佈或極端值存在時，常用中位數描述資料集中趨勢。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q08",
+  "subject_name": "機器學習技術與應用",
+  "stem": "以下哪一種優化方法會累積每個參數的歷史梯度大小，以調整學習率？",
+  "options": {
+   "A": "Momentum",
+   "B": "Adagrad",
+   "C": "SGD",
+   "D": "Batch Normalization"
+  },
+  "answer": "B",
+  "official_explanation": "Adagrad 根據各參數歷史梯度平方和，調整每個參數的學習率。對變動較少的參數保留較高學習率，而對變動大的參數降低學習率，特別適合處理稀疏特徵資料。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q09",
+  "subject_name": "機器學習技術與應用",
+  "stem": "當深度學習模型在訓練時出現梯度爆炸現象，應優先採用哪種技術加以處理？",
+  "options": {
+   "A": "增大學習率",
+   "B": "梯度裁剪（Gradient Clipping）",
+   "C": "減少資料量",
+   "D": "刪除輸入特徵"
+  },
+  "answer": "B",
+  "official_explanation": "梯度爆炸會導致權重變動過大甚至溢出，影響模型穩定性。梯度裁剪能限制梯度的最大值，防止數值爆炸，特別適用於深度神經網路或 RNN 訓練。"
+ },
+ {
+  "id": "guide_middle_s3_c1_q10",
+  "subject_name": "機器學習技術與應用",
+  "stem": "邏輯迴歸（Logistic Regression）模型在處理二元分類問題時，通常假設目標變數服從哪種分佈？",
+  "options": {
+   "A": "常態分佈",
+   "B": "均勻分佈",
+   "C": "伯努利分佈",
+   "D": "泊松分佈"
+  },
+  "answer": "C",
+  "official_explanation": "邏輯迴歸假設目標變數為二元型態（如 0 或 1），服從伯努利分佈，並透過 sigmoid 函數將預測值映射至機率區間[0, 1]，以完成二元分類。隨著資料規模與計算能力的提升，機器學習（Machine Learning）已成為人工智慧應用的核心基礎，而深度學習（Deep Learning）則進一步突破傳統模型的限制，在語音辨識、影像理解、自然語言處理等領域取得重大進展。本章將從機器學習的基本原理與常見技術出發，逐步延伸至深度學習的架構與實務應用，系統性建構從經典演算法到現代神經網路的技術地圖。機器學習（Machine Learning）強調從資料中自動學習規律，主要可分為監督式學習、非監督式學習與強化式學習三大類型，分別對應分類與迴歸、聚類與降維，以及序列決策等任務。整體流程涵蓋特徵工程、模型訓練、效能評估與超參數調整等技術環節，並仰賴精確的資料處理與演算法設計，以建構具泛化能力的預測模型。深度學習作為機器學習的子領域，透過多層神經網路進行特徵提取與結構建模，能自動學習高維資料中的抽象表示，適用於圖像、文字、語音等非結構化資料處理任務。現代深度學習架構如 CNN、RNN、Transformer 等，已成為人工智慧應用的主要模型，並依賴大規模資料與高效優化策略進行訓練。本章將依序介紹三個主題：機器學習原理與技術：釐清不同學習類型的基本架構與應用邏輯，並掌握偏差-變異的理論背景與模型評估方法。常見機器學習演算法：介紹實務中常見的模型選擇，包括線性迴歸、邏輯迴歸、決策樹、支援向量機、K-means 等，並比較其適用場景與限制。深度學習原理與框架：建構對神經網路架構與深度模型的整體理解，說明各類模型結構、運算流程與訓練技巧，並介紹主流開發框架。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q01",
+  "subject_name": "機器學習技術與應用",
+  "stem": "機器學習（Machine Learning）中，若輸入資料沒有標註，欲探索潛在的群組或模式，應屬於哪種學習類型？",
+  "options": {
+   "A": "監督式學習（Supervised Learning）",
+   "B": "半監督式學習（Semi-supervised Learning）",
+   "C": "非監督式學習（Unsupervised Learning）",
+   "D": "強化式學習（Reinforcement Learning）"
+  },
+  "answer": "C",
+  "official_explanation": "非監督式學習（Unsupervised Learning）不依賴標註資料，主要目的是從資料中發現潛在結構、模式或分佈，例如分群（Clustering）、降維（Dimensionality Reduction）等技術，是探索性資料分析的重要工具。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q02",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在監督式學習中，當模型要預測一個連續數值時，這種任務稱為什麼？",
+  "options": {
+   "A": "分類（Classification）",
+   "B": "迴歸（Regression）",
+   "C": "聚類（Clustering）",
+   "D": "降維（Dimensionality Reduction）"
+  },
+  "answer": "B",
+  "official_explanation": "迴歸（Regression）是預測連續數值的任務，如房價預測、氣溫預測等，與分類不同，分類是用來預測離散類別結果。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q03",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在深度學習中，用於學習資料中局部特徵的網路架構通常是什麼？",
+  "options": {
+   "A": "循環神經網路（Recurrent Neural Network, RNN）",
+   "B": "決策樹（Decision Tree）",
+   "C": "卷積神經網路（Convolutional Neural Network, CNN）",
+   "D": "隨機森林（Random Forest）"
+  },
+  "answer": "C",
+  "official_explanation": "卷積神經網路（CNN）透過卷積層偵測局部特徵，尤其擅長處理影像、語音等有空間或時間結構的資料，是深度學習中重要的基礎架構之一。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q04",
+  "subject_name": "機器學習技術與應用",
+  "stem": "支援向量機（Support Vector Machine, SVM）若用於迴歸問題，稱為什麼？",
+  "options": {
+   "A": "Logistic Regression",
+   "B": "Decision Tree Regression",
+   "C": "Random Forest",
+   "D": "Support Vector Regression"
+  },
+  "answer": "D",
+  "official_explanation": "當支援向量機（SVM）應用於連續數值的預測問題時，稱為支援向量迴歸（Support Vector Regression, SVR）。SVR 與傳統 SVM 不同，目標是尋找一條最佳超平面，使大多數資料點落在預設的誤差範圍內。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q05",
+  "subject_name": "機器學習技術與應用",
+  "stem": "機器學習模型若過度學習訓練資料中的雜訊，導致泛化能力下降，此現象稱為什麼？",
+  "options": {
+   "A": "欠擬合（Underfitting）",
+   "B": "過擬合（Overfitting）",
+   "C": "特徵縮放（Feature Scaling）",
+   "D": "梯度爆炸（Gradient Explosion）"
+  },
+  "answer": "B",
+  "official_explanation": "過擬合（Overfitting）是指模型在訓練資料上表現極好，卻無法在未知新資料上維持預測效能，通常是因為模型過於複雜，學習到不具代表性的噪聲。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q06",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在深度學習中，哪一個是為了引入非線性，使神經網路能學習複雜模式的元件？",
+  "options": {
+   "A": "損失函數（Loss Function）",
+   "B": "激活函數（Activation Function）",
+   "C": "隱藏層（Hidden Layer）",
+   "D": "梯度下降（Gradient Descent）"
+  },
+  "answer": "B",
+  "official_explanation": "激活函數（Activation Function）如 ReLU、Sigmoid 等，為神經網路帶來非線性能力，若沒有激活函數，多層網路仍只是線性變換，無法表現複雜的關係。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q07",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若想在機器學習中降低模型過度擬合風險，可採用哪種方法？",
+  "options": {
+   "A": "提高學習率",
+   "B": "減少資料量",
+   "C": "正則化（Regularization）",
+   "D": "隨機刪除特徵"
+  },
+  "answer": "C",
+  "official_explanation": "正則化（Regularization）透過在損失函數中加入 L1 或 L2 懲罰項，限制模型權重的大小，減少模型過度擬合訓練資料，提升泛化能力。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q08",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在深度學習模型的訓練過程中，計算模型輸出與實際值差距的函數稱為什麼？",
+  "options": {
+   "A": "激活函數（Activation Function）",
+   "B": "池化函數（Pooling Function）",
+   "C": "損失函數（Loss Function）",
+   "D": "梯度函數（Gradient Function）"
+  },
+  "answer": "C",
+  "official_explanation": "損失函數（Loss Function）用來衡量模型預測值與實際值的差距，是指引優化器調整參數方向的重要依據。常見如均方誤差（MSE）、交叉熵損失（Cross-Entropy Loss）等。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q09",
+  "subject_name": "機器學習技術與應用",
+  "stem": "Transformer 模型中用來捕捉輸入序列不同位置間依賴關係的核心機制是什麼？",
+  "options": {
+   "A": "池化機制（Pooling）",
+   "B": "注意力機制（Attention）",
+   "C": "決策樹分支",
+   "D": "激活函數（Activation Function）"
+  },
+  "answer": "B",
+  "official_explanation": "Transformer 模型核心在於注意力機制（Attention），透過計算序列中各元素間的關聯權重，捕捉長距離依賴，徹底取代傳統 RNN 的循環架構，大幅提升計算效率與表現。"
+ },
+ {
+  "id": "guide_middle_s3_c2_q10",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在決策樹模型中，用於判斷分裂效果好壞的指標，常見的是下列哪一種？",
+  "options": {
+   "A": "機率密度函數（Probability Density Function）",
+   "B": "均方根誤差（Root Mean Squared Error）",
+   "C": "基尼不純度（Gini Impurity）",
+   "D": "卷積核大小（Kernel Size）"
+  },
+  "answer": "C",
+  "official_explanation": "基尼不純度（Gini Impurity）衡量節點內樣本的不純度，數值越低表示節點內樣本越集中於單一類別，是決策樹演算法常用的分裂判斷依據，尤其在分類任務中扮演重要角色。機器學習模型的效能不僅取決於演算法本身，更仰賴整體建模流程中每一個環節的設計與執行品質。從資料整理、特徵建構，到模型選擇、訓練與優化，每一個步驟都直接影響最終預測結果的準確性與穩定性。因此，模型建構並非單一演算法的套用，而是一套完整且需反覆調整的工程流程。本章「機器學習建模與參數調校」將聚焦於模型導入前的資料準備與特徵工程、導入中的模型設計與訓練策略，以及導入後的效能驗證與參數調整。章節主要內容如下：數據準備與特徵工程：處理資料品質與轉換方式，建構有意義的輸入特徵，提升模型學習效率。模型選擇與架構設計：依據任務性質與資料特性選擇適當模型，並針對模型結構進行初步設計與假設空間限制。模型訓練、評估與驗證：定義學習目標、資料切分方式與評估指標，確保模型具備泛化能力。模型調整與優化：進行參數調校、效能微調與策略融合，提升模型效能與部署可行性。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q01",
+  "subject_name": "機器學習技術與應用",
+  "stem": "針對缺失值（Missing Value）的處理，下列哪種方法屬於利用模型進行補值的方式？",
+  "options": {
+   "A": "刪除法（Deletion）",
+   "B": "均值填補（Mean Imputation）",
+   "C": "預測模型填補（Predictive Imputation）",
+   "D": "缺失指標編碼（Missing Indicator）"
+  },
+  "answer": "C",
+  "official_explanation": "預測模型填補是利用其他特徵變數訓練模型，如迴歸或分類器，預測缺失值的位置或值，特別適用於特徵之間關聯性高的情況。相對於簡單的刪除或均值填補，模型補值能更好地捕捉數據內在關聯性，降低資訊流失。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q02",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在進行異常值（Outlier）偵測時，哪種方法是利用統計特徵分佈來判斷離群點？",
+  "options": {
+   "A": "KNN 補值",
+   "B": "四分位距法（IQR）",
+   "C": "Isolation Forest",
+   "D": "One-hot Encoding"
+  },
+  "answer": "B",
+  "official_explanation": "四分位距法是常見的統計方法，透過計算資料的第一與第三四分位數（Q1 與 Q3），並判定距離超過 IQR（四分位距）1.5 倍以上的數據點為異常。這種方法直觀且適用於大多數數值型資料的初步檢查。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q03",
+  "subject_name": "機器學習技術與應用",
+  "stem": "下列哪一種特徵選擇方法會直接在模型訓練過程中進行特徵挑選？",
+  "options": {
+   "A": "Filter 方法",
+   "B": "Wrapper 方法",
+   "C": "Embedded 方法",
+   "D": "One-hot Encoding"
+  },
+  "answer": "C",
+  "official_explanation": "Embedded 方法會在模型訓練過程中同步進行特徵挑選。例如決策樹模型會產生特徵重要性（Feature Importance），或像 Lasso、Ridge 透過正則化直接控制特徵權重，實現同時建模與特徵選擇的目標。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q04",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在進行特徵轉換時，若資料存在極端偏高的右偏分佈，常用哪種轉換以降低偏態？",
+  "options": {
+   "A": "平方根轉換（Square Root Transform）",
+   "B": "對數轉換（Log Transform）",
+   "C": "Label Encoding",
+   "D": "缺失指標編碼"
+  },
+  "answer": "B",
+  "official_explanation": "對數轉換可有效降低右偏分佈的極端值影響，使資料分佈更接近常態。常用於收入、銷售額等具極端高值的變數。平方根轉換則較適用於中度偏態資料。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q05",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在模型訓練過程中，若模型在訓練集表現良好，但測試集效能不佳，可能是發生了什麼問題？",
+  "options": {
+   "A": "欠擬合",
+   "B": "特徵縮放失敗",
+   "C": "過擬合",
+   "D": "批次大小過小"
+  },
+  "answer": "C",
+  "official_explanation": "過擬合發生在模型學習了太多訓練集的細節與雜訊，導致在未見過的測試資料上表現不佳。常見解決方案包括使用正則化、降低模型複雜度或早停策略（Early Stopping）。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q06",
+  "subject_name": "機器學習技術與應用",
+  "stem": "交叉驗證中，哪一種方法在每次驗證中只留下一筆樣本作為驗證集，其餘皆用於訓練？",
+  "options": {
+   "A": "K-fold",
+   "B": "Stratified K-fold",
+   "C": "LOOCV",
+   "D": "Repeated K-fold"
+  },
+  "answer": "C",
+  "official_explanation": "LOOCV（Leave-One-Out Cross-Validation）是 K-fold 的極端形式，當 K等於樣本數 n 時，每次只留一筆做驗證。此方法能最大化資料利用，但計算成本極高，不適用於大樣本情境。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q07",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在訓練深度學習模型時，隨機將部分神經元暫時關閉以減少過擬合的技術是什麼？",
+  "options": {
+   "A": "Early Stopping",
+   "B": "Dropout",
+   "C": "Batch Normalization",
+   "D": "Quantization"
+  },
+  "answer": "B",
+  "official_explanation": "Dropout 透過隨機將神經元暫時設為零，迫使模型在每次訓練都以不同的「子網路」進行學習，有效降低模型對特定神經元的過度依賴，減少過擬合風險。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q08",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在模型壓縮技術中，知識蒸餾（Knowledge Distillation）的主要目的是什麼？",
+  "options": {
+   "A": "減少資料維度",
+   "B": "降低參數數量使模型更小",
+   "C": "將大型模型的知識轉移至小型模型",
+   "D": "增強資料平衡"
+  },
+  "answer": "C",
+  "official_explanation": "Knowledge Distillation 是利用大型、高性能的教師模型，將其知識以軟標籤（soft labels）的形式傳遞給小型學生模型，讓學生模型在參數較少的情況下，仍維持接近的預測能力。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q09",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在優化器中，哪一個方法會自動調整每個參數的學習率，特別適用於稀疏資料？",
+  "options": {
+   "A": "Momentum",
+   "B": "Adagrad",
+   "C": "Adam",
+   "D": "SGD"
+  },
+  "answer": "B",
+  "official_explanation": "Adagrad 能針對每個參數調整不同的學習率，累積梯度平方和後，自動減小常被更新參數的學習步伐。適合處理特徵稀疏的場景，如文字分析，但學習率會不斷衰減至極小值，需留意訓練是否停滯。"
+ },
+ {
+  "id": "guide_middle_s3_c3_q10",
+  "subject_name": "機器學習技術與應用",
+  "stem": "One-hot Encoding 在什麼情況下可能造成模型的運算負擔加重？",
+  "options": {
+   "A": "缺失值多的資料",
+   "B": "資料集中某類別種類 10 種",
+   "C": "類別變數具有高基數（High Cardinality）",
+   "D": "資料集中無重複樣本"
+  },
+  "answer": "C",
+  "official_explanation": "One-hot Encoding 會為每個不同類別產生獨立欄位，若類別數過多，會導致特徵維度爆炸，增加記憶體使用與模型訓練的負擔，尤其在資料量大時更明顯。隨著機器學習技術與 AI 相關服務廣泛應用於各類產業，資料治理議題隨之成為企業部署 AI 系統時的核心關鍵。除技術實作挑戰外，企業更需面對隱私保護、資訊安全與法規遵循的壓力，以及演算法偏見與公平性的社會責任。機器學習治理的目的在於系統性控管資料與模型風險，確保 AI 應用在合法、安全、公平的原則下運作。本節將從兩個主要面向進行探討：數據隱私、安全與合規辨識及管理資料治理相關的風險，並透過合適的技術方法及治理框架，確保AI 系統的數據安全性、隱私保護與法規遵循。演算法偏見與公平性介紹機器學習模型中的偏見來源，公平性評估方法及降低偏見的具體策略，並提供組織層面的公平性治理機制，以確保 AI 應用的公正性與社會責任。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q01",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在個人資料保護法規的框架下，下列哪一組資訊單獨使用時，最明確地被歸類為「直接識別個人身份資訊（Directly Identifiable Information, PII）」？",
+  "options": {
+   "A": "出生日期、郵遞區號、職業",
+   "B": "網站 Cookie ID、設備 IP 位址、地理定位資訊",
+   "C": "姓名、電子郵件地址、身分證字號",
+   "D": "網路行為模式、匿名化統計數據、加密後的密碼雜湊值"
+  },
+  "answer": "C",
+  "official_explanation": "「直接識別個人身份資訊（PII）」是指無需透過其他資訊輔助，單獨即可明確辨識出特定個人的資料。（A）出生日期、郵遞區號和職業等資訊單獨無法直接識別特定個人，通常需要結合其他資訊才能達到識別效果，屬於準識別資訊（Quasi-Identifiers）。（B）網站 Cookie ID、IP 位址和地理定位資訊雖然屬於識別符號，且在特定情境下可被追溯或結合其他資訊後具有識別性，但其本身通常不被視為單獨可直接指向特定個人的 PII。通常被歸類為間接識別資訊。（C）姓名、電子郵件地址和身分證字號是典型的直接識別資訊，這些資訊單獨就能指向一個特定且唯一的人。（D）網路行為模式、匿名化統計數據和加密後的密碼雜湊值均屬於非直接識別資訊。匿名化數據已去除識別性，加密雜湊值雖然源於個人密碼但已不可逆地處理，網路行為模式本身也不直接指向個人。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q02",
+  "subject_name": "機器學習技術與應用",
+  "stem": "以下哪一種資料處理方式屬於「隨機擾動（Noise Injection）」？",
+  "options": {
+   "A": "把姓名改成代號",
+   "B": "將薪資加入隨機誤差",
+   "C": "將地址改成縣市級別",
+   "D": "以星號遮蔽身分證號"
+  },
+  "answer": "B",
+  "official_explanation": "即便進行匿名化，外部資料比對仍可能造成再識別風險，因此須強化匿名化措施或限制資料使用情境，才能降低風險。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q03",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在 AI 偏見治理中，對不同群體調整模型預測閾值，屬於哪一種偏見修正方法？",
+  "options": {
+   "A": "資料泛化",
+   "B": "結果門檻調整",
+   "C": "模型剪枝",
+   "D": "資料增強"
+  },
+  "answer": "B",
+  "official_explanation": "結果門檻調整（Threshold Adjustment）屬於模型後處理方式，透過改變不同群體的決策門檻，以平衡模型在不同群體間的預測公平性。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q04",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若企業想確保 AI 模型在不同群體間「真正該被選擇者」皆有同等機會被正確預測，應採用哪一個公平性指標？",
+  "options": {
+   "A": "Equal Opportunity",
+   "B": "Demographic Parity",
+   "C": "K-Anonymity",
+   "D": "T-Closeness"
+  },
+  "answer": "A",
+  "official_explanation": "Equal Opportunity 著重在實際應獲得正向結果的個案，在不同群體間應具有相同的被正確預測機率，尤其適用於醫療、社會福利等情境。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q05",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若企業欲在 AI 專案中降低敏感特徵（如性別）的影響，可以採取哪種模型內部處理方式？",
+  "options": {
+   "A": "對抗式去偏模型",
+   "B": "模型蒸餾",
+   "C": "雜湊處理",
+   "D": "結果門檻調整"
+  },
+  "answer": "A",
+  "official_explanation": "對抗式去偏透過訓練一個對抗網路，迫使主模型無法預測敏感屬性，從而降低模型對敏感特徵的依賴，是常見的公平性處理技術。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q06",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若資料集中存在群體樣本數不均，造成模型偏向多數群體，適合採用哪種技術？",
+  "options": {
+   "A": "權重初始化",
+   "B": "權重衰減",
+   "C": "類別重加權",
+   "D": "全量訓練"
+  },
+  "answer": "C",
+  "official_explanation": "類別重加權能在模型訓練時賦予少數類別更高權重，提升模型對少數群體的辨識能力，是處理不平衡資料常見的方法。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q07",
+  "subject_name": "機器學習技術與應用",
+  "stem": "T-接近性（T-Closeness）技術主要是為了降低什麼風險？",
+  "options": {
+   "A": "機率分佈差異造成的識別風險",
+   "B": "資料重複風險",
+   "C": "訓練時間過長",
+   "D": "演算法震盪問題"
+  },
+  "answer": "A",
+  "official_explanation": "T-Closeness 要求群組內敏感屬性的分佈，需與全體資料集分佈相近，以防止透過分佈偏差推測個人特徵，是進階的隱私保護技術。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q08",
+  "subject_name": "機器學習技術與應用",
+  "stem": "在 AI 公平性治理中，企業應建立什麼跨部門組織，確保公平性納入日常決策流程？",
+  "options": {
+   "A": "模型剪枝委員會",
+   "B": "AI 蒸餾中心",
+   "C": "公平性審查委員會",
+   "D": "隨機抽樣團隊"
+  },
+  "answer": "C",
+  "official_explanation": "公平性審查委員會匯集法務、技術、產品與倫理等部門，負責評估 AI系統的偏見風險，是企業治理 AI 公平性的重要機制。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q09",
+  "subject_name": "機器學習技術與應用",
+  "stem": "若企業欲降低 AI 模型因少數群體樣本過少而造成的過擬合風險，可以採用哪種資料增強方法？",
+  "options": {
+   "A": "SMOTE",
+   "B": "Softmax",
+   "C": "Momentum",
+   "D": "Dropout"
+  },
+  "answer": "A",
+  "official_explanation": "SMOTE（Synthetic Minority Over-sampling Technique）透過合成新樣本，擴增少數類別資料，有助於平衡類別分佈，降低過擬合及模型偏誤風險。"
+ },
+ {
+  "id": "guide_middle_s3_c4_q10",
+  "subject_name": "機器學習技術與應用",
+  "stem": "下列哪一項不是常見的隱私保護基礎技術？",
+  "options": {
+   "A": "遮蔽（Masking）",
+   "B": "泛化（Generalization）",
+   "C": "知識蒸餾（Knowledge Distillation）",
+   "D": "分桶（Bucketing）"
+  },
+  "answer": "C",
+  "official_explanation": "知識蒸餾是用於模型壓縮與加速的技術，並非基礎隱私保護技術。隱私保護常用技術包括遮蔽、泛化及分桶，用來降低個資識別風險。"
+ }
+]

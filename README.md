@@ -12,14 +12,25 @@
 - 作答後立即顯示 AI 詳解:解題思路 + 每個選項對錯原因
 - 錯題回顧、各科累計正確率(存在瀏覽器 localStorage)
 
-## 題庫
+## 題庫(共 779 題)
+
+**歷屆公告試題 600 題**(官方標準答案,詳解由 AI 生成):
 
 | 級別 | 梯次 | 科目 | 題數 |
 |---|---|---|---|
 | 初級 | 114-4、115-1、115-2 | 人工智慧基礎概論、生成式AI應用與規劃 | 300 |
 | 中級 | 114-2、115-1 | 人工智慧技術應用與規劃、大數據處理分析與應用、機器學習技術與應用 | 300 |
 
-來源:[iPAS 官方公告試題](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)(含官方標準答案)。詳解由 AI(Claude Sonnet)生成,僅供學習參考。
+**學習指引範例題 179 題**(章末習題,**官方答案＋官方解析**,逐選項說明由 AI 補充):
+
+| 級別 | 科目 | 題數 |
+|---|---|---|
+| 初級 | 科目1 / 科目2 | 40 / 29 |
+| 中級 | 科目1 / 科目2 / 科目3 | 30 / 40 / 40 |
+
+網站可依來源篩選(全部 / 歷屆試題 / 學習指引)。學習指引題的解題思路會標示「官方解析」徽章。
+
+來源:[iPAS 官方學習資源](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)。學習指引題已套用官方勘誤表修正(目前 1 題:初級科目1 答案 B→A)。
 
 ## 部署(Cloudflare Workers 靜態資產)
 
@@ -41,9 +52,11 @@ npx wrangler deploy
 ## 資料管線(重建題庫時才需要)
 
 ```
-uv run scripts/download_pdfs.py     # 下載官方 12 份試題 PDF → data/raw/
-uv run scripts/parse_pdf.py         # 解析 PDF → data/questions-*.json + site/images/*.png
+uv run scripts/download_pdfs.py     # 下載官方 PDF(12 份試題 + 5 份學習指引 + 2 份勘誤表)
+uv run scripts/parse_pdf.py         # 解析試題 → data/questions-*.json + site/images/*.png
+uv run scripts/parse_guide.py       # 解析學習指引範例題 → data/guide-*.json(含官方解析與勘誤)
 uv run scripts/split_batches.py     # 切註解批次檔 → data/annotate/*.json
+uv run scripts/split_guide_batches.py  # 學習指引題的註解批次檔
 # (由 AI agent 產出 data/annotate/out/*.json 註解)
 uv run scripts/build_site_data.py   # 合併註解+人工修正 → site/data/questions-*.js
 uv run scripts/audit.py             # 稽查題庫是否有跨題黏連污染

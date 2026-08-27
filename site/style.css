@@ -165,6 +165,8 @@ button.danger { color: var(--red-pen); }
 #quiz-score { flex: 1; }
 #quiz-score::after { content: " ✿"; color: var(--red-pen); }
 
+/* 題目卡給最小高度,短題目不會讓整張紙縮起來 */
+#question-card { min-height: 34rem; }
 .q-tags { display: flex; gap: 10px; flex-wrap: wrap; align-items: baseline; margin-bottom: 16px; }
 .tag {
   font-size: .78rem; font-weight: 700; letter-spacing: .06em;
@@ -173,11 +175,16 @@ button.danger { color: var(--red-pen); }
 }
 .tag.src { background: none; border: none; color: var(--muted); font-weight: 400; font-family: var(--hand); padding: 0; }
 
+/* 情境區:限高並內部捲動,避免長情境把整頁撐開造成版面跳動 */
 .q-context {
   background: var(--blue-block); border: 2px solid var(--line);
   border-radius: var(--wobbly);
   padding: 12px 18px; margin-bottom: 18px; font-size: .9rem; white-space: pre-wrap;
+  max-height: 15rem; overflow-y: auto; overscroll-behavior: contain;
 }
+.q-context::-webkit-scrollbar { width: 9px; }
+.q-context::-webkit-scrollbar-thumb { background: rgba(138, 116, 84, .45); border-radius: 5px; }
+.q-context::-webkit-scrollbar-track { background: transparent; }
 .q-context .ctx-label {
   display: block; font-family: var(--hand); color: var(--blue-pen);
   font-size: .9rem; margin-bottom: 4px;
@@ -185,6 +192,8 @@ button.danger { color: var(--red-pen); }
 .q-context .ctx-label::before { content: "📎 "; }
 
 .q-stem { font-size: 1.02rem; font-weight: 600; margin-bottom: 18px; text-align: justify; }
+/* 題幹最小高度只用在作答卡,讓選項起點維持同一位置;檢討頁不需要留白 */
+#question-card .q-stem { min-height: 5.8rem; }
 .q-fig {
   max-width: 100%; display: block; margin: 12px 0;
   background: #fff; padding: 6px; border: 1.6px solid var(--line); border-radius: 8px;
@@ -252,6 +261,13 @@ button.danger { color: var(--red-pen); }
   letter-spacing: .2em; margin-bottom: 6px;
 }
 .explain h3::before { content: "✎ "; }
+.badge-official {
+  display: inline-block; margin-left: 10px; padding: 0 9px;
+  background: var(--green-block); border: 1.6px solid var(--line);
+  border-radius: var(--wobbly); color: var(--ink-soft);
+  font-size: .72rem; font-weight: 700; letter-spacing: .05em;
+  transform: rotate(-1.5deg); vertical-align: middle;
+}
 .explain .note {
   margin-top: 10px; padding-top: 8px; border-top: 2px dashed rgba(176, 57, 47, .45);
   color: var(--red-pen); font-size: .9rem;

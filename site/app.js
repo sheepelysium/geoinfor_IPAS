@@ -20,6 +20,7 @@
   var state = {
     level: "junior",
     subject: "all", // "all" 或科目數字
+    origin: "all",  // "all" | "past"(歷屆試題) | "guide"(學習指引範例題)
     quiz: null,     // { list, optionOrders, idx, answers[], correctCount }
   };
 
@@ -47,6 +48,10 @@
   }
   function figHtml(src) {
     return '<img class="q-fig" src="' + esc(src) + '" alt="題目附圖">';
+  }
+  function srcLabel(q) {
+    if (q.origin === "guide") return "學習指引 範例題";
+    return q.session + " 梯次 原卷第 " + q.number + " 題";
   }
 
   // ---------- 統計儲存 ----------
@@ -92,8 +97,11 @@
   // ---------- 設定畫面 ----------
   function pool() {
     var qs = window.QUESTION_BANK[state.level] || [];
-    if (state.subject === "all") return qs;
-    return qs.filter(function (q) { return q.subject === state.subject; });
+    return qs.filter(function (q) {
+      if (state.subject !== "all" && q.subject !== state.subject) return false;
+      if (state.origin !== "all" && (q.origin || "past") !== state.origin) return false;
+      return true;
+    });
   }
 
   function renderSetup() {
@@ -111,9 +119,20 @@
         renderSetup();
       };
     });
+    Array.prototype.forEach.call(document.querySelectorAll("#origin-seg .seg-btn"), function (b) {
+      b.classList.toggle("active", b.getAttribute("data-origin") === state.origin);
+      b.onclick = function () {
+        state.origin = b.getAttribute("data-origin");
+        renderSetup();
+      };
+    });
     var p = pool();
-    var annotated = p.filter(function (q) { return q.explanation; }).length;
-    $("pool-info").textContent = "題庫共 " + p.length + " 題,每次隨機抽 " + QUIZ_SIZE + " 題;已有 AI 詳解 " + annotated + " 題。";
+    var guideN = p.filter(function (q) { return q.origin === "guide"; }).length;
+    var txt = "題庫共 " + p.length + " 題,每次隨機抽 " + QUIZ_SIZE + " 題";
+    if (state.origin === "all" && guideN) {
+      txt += "(歷屆 " + (p.length - guideN) + " 題、學習指引 " + guideN + " 題)";
+    }
+    $("pool-info").textContent = txt + "。";
   }
 
   // ---------- 出題 ----------
@@ -144,7 +163,7 @@
 
     var html = '<div class="q-tags">'
       + '<span class="tag">' + esc(q.subject_name) + "</span>"
-      + '<span class="tag src">' + esc(q.session) + " 梯次 原卷第 " + q.number + " 題</span>"
+      + '<span class="tag src">' + esc(srcLabel(q)) + "</span>"
       + "</div>";
 
     if (q.context) {
@@ -208,7 +227,10 @@
       + (correct ? "○ 答對!" : "✗ 答錯了,記下來——")
       + "</div>";
     if (q.explanation && q.explanation.approach) {
-      html += '<div class="explain"><h3>解題思路</h3>' + esc(q.explanation.approach);
+      html += '<div class="explain"><h3>解題思路'
+            + (q.explanation.source === "official" ? '<span class="badge-official">官方解析</span>' : "")
+            + "</h3>" + esc(q.explanation.approach);
+          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(q.explanation.errata) + "</div>";
       if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
       if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
       html += "</div>";
@@ -288,7 +310,7 @@
         var q = x.q;
         var html = '<div class="card review-q"><div class="q-tags">'
           + '<span class="tag">' + esc(q.subject_name) + "</span>"
-          + '<span class="tag src">' + esc(q.session) + " 梯次 第 " + q.number + " 題</span></div>";
+          + '<span class="tag src">' + esc(srcLabel(q)) + "</span></div>";
         if (q.context) html += '<div class="q-context">' + esc(q.context.text) + "</div>";
         html += '<div class="q-stem">' + esc(q.stem) + "</div>";
         (q.figures || []).forEach(function (f) { if (f.position === "stem") html += figHtml(f.src); });
@@ -304,7 +326,10 @@
           html += "</span></div>";
         });
         if (q.explanation && q.explanation.approach) {
-          html += '<div class="explain"><h3>解題思路</h3>' + esc(q.explanation.approach);
+          html += '<div class="explain"><h3>解題思路'
+            + (q.explanation.source === "official" ? '<span class="badge-official">官方解析</span>' : "")
+            + "</h3>" + esc(q.explanation.approach);
+          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(q.explanation.errata) + "</div>";
           if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
           if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
           html += "</div>";

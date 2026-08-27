@@ -38,9 +38,33 @@ if fix_file.exists():
 
 for lvl in ["junior", "middle"]:
     qs = json.loads((ROOT / "data" / f"questions-{lvl}.json").read_text(encoding="utf-8"))
+    for q in qs:
+        q["origin"] = "past"          # 歷屆公告試題
+
+    # 併入學習指引範例題(官方解析 + AI 逐選項說明)
+    guide_file = ROOT / "data" / f"guide-{lvl}.json"
+    if guide_file.exists():
+        guides = json.loads(guide_file.read_text(encoding="utf-8"))
+        for g in guides:
+            g["origin"] = "guide"     # 學習指引範例題
+            official = g["explanation"]["approach"]
+            errata = g["explanation"].get("errata")
+            ann = annotations.get(g["id"]) or {}
+            g["explanation"] = {
+                "approach": official,
+                "options": ann.get("options", {}),
+                "source": "official",
+                **({"note": ann["note"]} if ann.get("note") else {}),
+                **({"errata": errata} if errata else {}),
+            }
+        qs += guides
+        print(f"{lvl}: 併入學習指引題 {len(guides)} 題")
+
     missing = []
     bad = []
     for q in qs:
+        if q.get("origin") == "guide":
+            continue                  # 學習指引題的詳解已在上面組好
         ann = annotations.get(q["id"])
         if ann is None:
             missing.append(q["id"])
