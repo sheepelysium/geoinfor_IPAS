@@ -12,13 +12,13 @@
 - 作答後立即顯示 AI 詳解:解題思路 + 每個選項對錯原因
 - 錯題回顧、各科累計正確率(存在瀏覽器 localStorage)
 
-## 題庫(共 779 題)
+## 題庫(共 879 題)
 
-**歷屆公告試題 600 題**(官方標準答案,詳解由 AI 生成):
+**歷屆公告試題 700 題**(官方標準答案,詳解由 AI 生成):
 
 | 級別 | 梯次 | 科目 | 題數 |
 |---|---|---|---|
-| 初級 | 114-4、115-1、115-2 | 人工智慧基礎概論、生成式AI應用與規劃 | 300 |
+| 初級 | 114-4、115-1、115-2、115-3 | 人工智慧基礎概論、生成式AI應用與規劃 | 400 |
 | 中級 | 114-2、115-1 | 人工智慧技術應用與規劃、大數據處理分析與應用、機器學習技術與應用 | 300 |
 
 **學習指引範例題 179 題**(章末習題,**官方答案＋官方解析**,逐選項說明由 AI 補充):
@@ -52,7 +52,7 @@ npx wrangler deploy
 ## 資料管線(重建題庫時才需要)
 
 ```
-uv run scripts/download_pdfs.py     # 下載官方 PDF(12 份試題 + 5 份學習指引 + 2 份勘誤表)
+uv run scripts/download_pdfs.py     # 下載官方 PDF(14 份試題 + 5 份學習指引 + 2 份勘誤表)
 uv run scripts/parse_pdf.py         # 解析試題 → data/questions-*.json + site/images/*.png
 uv run scripts/parse_guide.py       # 解析學習指引範例題 → data/guide-*.json(含官方解析與勘誤)
 uv run scripts/split_batches.py     # 切註解批次檔 → data/annotate/*.json
