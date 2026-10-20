@@ -23,3 +23,9 @@ BASE 加上檔名就是下載網址。注意 `ipd.nat.gov.tw` 與 `www.ipas.org.
 風格基準(取自既有初級批次):approach 60–200 字、每個選項說明 25–130 字;`note`=答案疑義(紅字)、`timeliness`=時效提醒(藍字),50 題裡各 0–3 題,不要濫用。
 
 **瀏覽器驗證的坑**:app.js 的 `state` 包在 IIFE 內,外部取不到;要檢視特定題目只能改 `window.QUESTION_BANK` 再重開回合,而且**開始回合要求題庫 ≥20 題**(不足會跳 alert),所以要把目標題複製成 20 份。
+
+## 部署(同日補充)
+
+- **wrangler 的 OAuth token 會過期**,過期後 `npx wrangler deploy` 在非互動 shell 會直接要 `CLOUDFLARE_API_TOKEN` 而不自動 refresh。要在真正的終端機(TTY)跑才會走瀏覽器重新登入。
+- **排除檔案用 `site/.assetsignore`**(格式同 `.gitignore`),放在 assets 目錄根部。`.assetsignore` 自己也不會被上傳。
+- ⚠ `wrangler deploy --dry-run` 印的「Read N files」是**套用 .assetsignore 之前**的數量,加了排除規則數字不會變少,**不能用它驗證排除有沒有生效**。要實際部署後 curl 該路徑確認回 404。
