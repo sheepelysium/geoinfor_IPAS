@@ -47,6 +47,7 @@ npx wrangler deploy
 
 - `site/_headers` 控制快取:題庫與程式碼不快取(改版立即生效),`images/` 長期快取
 - 只有 `site/` 會被發布;`data/raw/` 的官方 PDF、`scripts/`、`data/annotate/` 都不會出現在網站上
+- `site/.assetsignore` 排除不想公開的檔案(目前是 `mockups/` 設計稿),格式同 `.gitignore`
 - 驗證設定但不實際上傳:`npx wrangler deploy --dry-run`
 
 ## 資料管線(重建題庫時才需要)
