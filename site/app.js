@@ -39,6 +39,25 @@
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
+  // 選項是隨機排序的,但詳解文字裡的「(A)」指的是原始卷面字母,直接顯示會指錯選項。
+  // 依本題洗牌結果改寫成畫面上的字母。只改真正的選項引用:
+  // - 全形（A）一律視為引用
+  // - 半形 (A) 只在前一字不是英數字時才算(避開 P(A)、np.linalg.inv(A) 這類寫法),
+  //   且題幹若出現半形 (A) 代表那是程式碼填空標記,整題的半形引用都不動
+  function remapLetters(text, q, order) {
+    if (!text || !order) return text;
+    var map = {};
+    order.forEach(function (key, i) { map[key] = "ABCD"[i]; });
+    var codeBlanks = /\([A-D]\)/.test(q.stem || "");
+    return String(text)
+      .replace(/（([A-D])）/g, function (m, L) {
+        return map[L] ? "（" + map[L] + "）" : m;
+      })
+      .replace(/([^A-Za-z0-9_]|^)\(([A-D])\)/g, function (m, pre, L) {
+        return codeBlanks || !map[L] ? m : pre + "(" + map[L] + ")";
+      });
+  }
+
   function show(viewId) {
     ["view-setup", "view-quiz", "view-result", "view-stats"].forEach(function (v) {
       $(v).classList.toggle("hidden", v !== viewId);
@@ -204,6 +223,7 @@
     var q = quiz.list[quiz.idx];
     if (quiz.answers.length > quiz.idx) return; // 已作答
 
+    var order = quiz.optionOrders[quiz.idx];
     var correct = chosenKey === q.answer;
     if (correct) quiz.correctCount++;
     quiz.answers.push({ id: q.id, chosen: chosenKey, correct: correct, subject: q.subject });
@@ -217,7 +237,7 @@
       // 每個選項掛上註解
       var note = b.querySelector(".opt-note");
       if (q.explanation && q.explanation.options && q.explanation.options[key]) {
-        note.textContent = q.explanation.options[key];
+        note.textContent = remapLetters(q.explanation.options[key], q, order);
         note.classList.remove("hidden");
       }
     });
@@ -229,10 +249,10 @@
     if (q.explanation && q.explanation.approach) {
       html += '<div class="explain"><h3>解題思路'
             + (q.explanation.source === "official" ? '<span class="badge-official">官方解析</span>' : "")
-            + "</h3>" + esc(q.explanation.approach);
-          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(q.explanation.errata) + "</div>";
-      if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
-      if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
+            + "</h3>" + esc(remapLetters(q.explanation.approach, q, order));
+          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(remapLetters(q.explanation.errata, q, order)) + "</div>";
+      if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(remapLetters(q.explanation.note, q, order)) + "</div>";
+      if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(remapLetters(q.explanation.timeliness, q, order)) + "</div>";
       html += "</div>";
     } else {
       html += '<div class="explain pending">此題 AI 詳解尚未生成。</div>';
@@ -308,6 +328,7 @@
     } else {
       box.innerHTML = wrongs.map(function (x) {
         var q = x.q;
+        var order = x.order;
         var html = '<div class="card review-q"><div class="q-tags">'
           + '<span class="tag">' + esc(q.subject_name) + "</span>"
           + '<span class="tag src">' + esc(srcLabel(q)) + "</span></div>";
@@ -321,17 +342,17 @@
             + '<span class="opt-body">' + esc(q.options[key]);
           optFigs.forEach(function (f) { html += figHtml(f.src); });
           if (q.explanation && q.explanation.options && q.explanation.options[key]) {
-            html += '<span class="opt-note">' + esc(q.explanation.options[key]) + "</span>";
+            html += '<span class="opt-note">' + esc(remapLetters(q.explanation.options[key], q, order)) + "</span>";
           }
           html += "</span></div>";
         });
         if (q.explanation && q.explanation.approach) {
           html += '<div class="explain"><h3>解題思路'
             + (q.explanation.source === "official" ? '<span class="badge-official">官方解析</span>' : "")
-            + "</h3>" + esc(q.explanation.approach);
-          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(q.explanation.errata) + "</div>";
-          if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(q.explanation.note) + "</div>";
-          if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(q.explanation.timeliness) + "</div>";
+            + "</h3>" + esc(remapLetters(q.explanation.approach, q, order));
+          if (q.explanation.errata) html += '<div class="note">📌 官方勘誤:' + esc(remapLetters(q.explanation.errata, q, order)) + "</div>";
+          if (q.explanation.note) html += '<div class="note">⚠ 答案疑義:' + esc(remapLetters(q.explanation.note, q, order)) + "</div>";
+          if (q.explanation.timeliness) html += '<div class="note timely">⏳ 時效提醒:' + esc(remapLetters(q.explanation.timeliness, q, order)) + "</div>";
           html += "</div>";
         }
         return html + "</div>";

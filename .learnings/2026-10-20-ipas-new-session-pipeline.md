@@ -29,3 +29,20 @@ BASE 加上檔名就是下載網址。注意 `ipd.nat.gov.tw` 與 `www.ipas.org.
 - **wrangler 的 OAuth token 會過期**,過期後 `npx wrangler deploy` 在非互動 shell 會直接要 `CLOUDFLARE_API_TOKEN` 而不自動 refresh。要在真正的終端機(TTY)跑才會走瀏覽器重新登入。
 - **排除檔案用 `site/.assetsignore`**(格式同 `.gitignore`),放在 assets 目錄根部。`.assetsignore` 自己也不會被上傳。
 - ⚠ `wrangler deploy --dry-run` 印的「Read N files」是**套用 .assetsignore 之前**的數量,加了排除規則數字不會變少,**不能用它驗證排除有沒有生效**。要實際部署後 curl 該路徑確認回 404。
+
+## 詳解字母引用 vs 選項洗牌(2026-10-20 修正)
+
+`startQuiz()` 會對每題的選項洗牌,但詳解是整段純文字輸出,裡面寫死的「(A)」是**原始卷面字母**,不會跟著重新對應,於是和畫面上的選項對不起來。逐選項說明不受影響(用原始 key 帶著走)。
+
+修法:`remapLetters(text, q, order)` 在渲染時依該題洗牌結果改寫,套用在 approach / note / timeliness / errata / options 五處、兩個渲染路徑(`answer()` 與 `renderReview()`)。
+
+⚠ **不能無條件改寫**,879 題裡掃出 19 處括號字母,其中 5 處是假陽性:
+- `P(A)`、`P(B)`、`np.linalg.inv(A)`、`Support(A→B)` — 數學/程式寫法
+- `程式碼中(A)與(B)` — 指附圖程式碼的填空標記,不是選項
+
+判準(三條都要):
+1. 全形`（A）`一律視為選項引用(官方學習指引都用全形)
+2. 半形`(A)`只在**前一字不是英數字或底線**時才算(擋掉 `P(`、`inv(`)
+3. **題幹若出現半形`([A-D])`**,代表那題的括號字母是程式碼填空標記,整題的半形引用都不動
+
+不要用 lookbehind(Safari 16.4 以前不支援),改成把前一個字元一起捕捉再補回去。
