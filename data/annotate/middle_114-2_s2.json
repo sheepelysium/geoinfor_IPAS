@@ -597,20 +597,26 @@
    "A": "lambda_poisson = 5表示每小時最多5個瑕疵品",
    "B": "poisson.pmf(5, lambda_poisson)表示小於5個瑕疵品的機率",
    "C": "卜瓦松分佈的適用條件為事件彼此獨立，且平均發生率固定",
-   "D": "poisson.cdf(10, 5)表示大於或等於10個瑕疵品的機率一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。Name：遊戲名稱Platform：遊戲平台（如PS4、X360、Wii等）Year：發售年份Genre：遊戲類型（如Action、Sports、Role-Playing等）Publisher：發行商名稱NA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單位：百萬份）Global_Sales：全球總銷售量（單位：百萬份）資料的欄位概觀如下："
+   "D": "poisson.cdf(10, 5)表示大於或等於10個瑕疵品的機率"
   },
   "answer": "C",
   "figures": [
    {
     "src": "images/middle_114-2_s2_q42_fig1.png",
-    "position": "end"
+    "position": "stem"
    }
   ]
  },
  {
   "id": "middle_114-2_s2_q43",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。\nName：遊戲名稱\nPlatform：遊戲平台（如PS4、X360、Wii等）\nYear：發售年份\nGenre：遊戲類型（如Action、Sports、Role-Playing等）\nPublisher：發行商名稱\nNA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單\n位：百萬份）\nGlobal_Sales：全球總銷售量（單位：百萬份）\n資料的欄位概觀如下：",
+   "figures": [
+    "images/middle_114-2_s2_ctx2_fig1.png",
+    "images/middle_114-2_s2_ctx2_fig2.png"
+   ]
+  },
   "stem": "分析師在載入資料後，檢視Year欄位的資料型態，發現它是float64，而非一般年份常用的整數。他想了解這樣的情形為什麼會發生。請問下列哪些原因可能導致這種狀況？原因A：CSV檔中Year欄位有缺失值(NaN)，導致Pandas自動將整欄轉為浮點數。原因B：CSV檔中的年份資料原本是字串(如\"2006\")，Pandas轉換時出錯而變成浮點數。原因C：Pandas預設會將所有數值型態讀取為float64，不論資料是否為整數。原因D：CSV檔中的年份資料可能包含小數點(例如2006.0)，因此被視為浮點數。",
   "options": {
    "A": "原因B、原因C",
@@ -624,7 +630,13 @@
  {
   "id": "middle_114-2_s2_q44",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。\nName：遊戲名稱\nPlatform：遊戲平台（如PS4、X360、Wii等）\nYear：發售年份\nGenre：遊戲類型（如Action、Sports、Role-Playing等）\nPublisher：發行商名稱\nNA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單\n位：百萬份）\nGlobal_Sales：全球總銷售量（單位：百萬份）\n資料的欄位概觀如下：",
+   "figures": [
+    "images/middle_114-2_s2_ctx2_fig1.png",
+    "images/middle_114-2_s2_ctx2_fig2.png"
+   ]
+  },
   "stem": "研究團隊接下來想要將Year欄位轉換為整數型態，以便後續進行年份趨勢分析。考慮到資料中可能包含缺失值（NaN），請選出最合適的轉換方式。",
   "options": {
    "A": "data['Year'] = data['Year'].astype(int)",
@@ -638,7 +650,13 @@
  {
   "id": "middle_114-2_s2_q45",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。\nName：遊戲名稱\nPlatform：遊戲平台（如PS4、X360、Wii等）\nYear：發售年份\nGenre：遊戲類型（如Action、Sports、Role-Playing等）\nPublisher：發行商名稱\nNA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單\n位：百萬份）\nGlobal_Sales：全球總銷售量（單位：百萬份）\n資料的欄位概觀如下：",
+   "figures": [
+    "images/middle_114-2_s2_ctx2_fig1.png",
+    "images/middle_114-2_s2_ctx2_fig2.png"
+   ]
+  },
   "stem": "為了觀察各遊戲平台的市場表現，分析師想要統計每個平台的全球銷售總額，並以長條圖呈現。請選出最能正確實現此分析的程式碼。",
   "options": {
    "A": "data.groupby(\"Platform\")[\"Global_Sales\"].sum().plot(kind=\"bar\")",
@@ -652,7 +670,13 @@
  {
   "id": "middle_114-2_s2_q46",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。\nName：遊戲名稱\nPlatform：遊戲平台（如PS4、X360、Wii等）\nYear：發售年份\nGenre：遊戲類型（如Action、Sports、Role-Playing等）\nPublisher：發行商名稱\nNA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單\n位：百萬份）\nGlobal_Sales：全球總銷售量（單位：百萬份）\n資料的欄位概觀如下：",
+   "figures": [
+    "images/middle_114-2_s2_ctx2_fig1.png",
+    "images/middle_114-2_s2_ctx2_fig2.png"
+   ]
+  },
   "stem": "團隊希望比較北美、歐洲、日本及其他地區的整體銷售比例，並使用seaborn套件以長條圖的形式進行可視化分析。請選出能正確顯示這些地區銷售總額比例的程式碼。",
   "options": {
    "A": "sns.countplot(x=[\"NA_Sales\",\"EU_Sales\",\"JP_Sales\",\"Other_Sales\"],data=data)",
@@ -666,26 +690,32 @@
  {
   "id": "middle_114-2_s2_q47",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "一間遊戲市場研究公司正在分析全球電子遊戲銷售情況，並準備建立一份「熱銷遊戲銷售報告」。分析師取得了一份名為vgsales.csv的資料集，內容包含了全球銷量超過10萬份的電子遊戲清單。研究團隊希望透過這份資料，了解不同年份、平台與地區的銷售趨勢。資料集的欄位說明如下，請根據下述資料情境回答以43~47題。\nName：遊戲名稱\nPlatform：遊戲平台（如PS4、X360、Wii等）\nYear：發售年份\nGenre：遊戲類型（如Action、Sports、Role-Playing等）\nPublisher：發行商名稱\nNA_Sales / EU_Sales / JP_Sales / Other_Sales：各地區銷售量（單\n位：百萬份）\nGlobal_Sales：全球總銷售量（單位：百萬份）\n資料的欄位概觀如下：",
+   "figures": [
+    "images/middle_114-2_s2_ctx2_fig1.png",
+    "images/middle_114-2_s2_ctx2_fig2.png"
+   ]
+  },
   "stem": "研究團隊想要知道在北美地區（NA）銷售成績最好的遊戲前五名，並希望以seaborn的條狀圖呈現結果。請選出能正確完成這項分析的程式碼。",
   "options": {
    "A": "sns.barplot(x=\"NA_Sales\", y=\"Name\", data=data.head(5))",
    "B": "sns.barplot(x=\"Name\", y=\"NA_Sales\", data=data.nlargest(5,\"NA_Sales\"))",
    "C": "sns.lineplot(x=\"Name\", y=\"NA_Sales\", data=data.nlargest(5,\"NA_Sales\"))",
-   "D": "sns.countplot(x=\"Name\", y=\"NA_Sales\", data=data)使用銷售資料集(marketing.csv)進行迴歸分析，附圖程式碼展示資料載入與處理，請回答後續48~50題。下圖顯示資料集的前5筆資料與相關資訊。"
+   "D": "sns.countplot(x=\"Name\", y=\"NA_Sales\", data=data)"
   },
   "answer": "B",
-  "figures": [
-   {
-    "src": "images/middle_114-2_s2_q47_fig1.png",
-    "position": "option:D"
-   }
-  ]
+  "figures": []
  },
  {
   "id": "middle_114-2_s2_q48",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "使用銷售資料集(marketing.csv)進行迴歸分析，附圖程式碼展示資料載入與處理，請回答後續48~50題。\n下圖顯示資料集的前5筆資料與相關資訊。",
+   "figures": [
+    "images/middle_114-2_s2_ctx4_fig1.png"
+   ]
+  },
   "stem": "根據上述結果，下列何者正確？",
   "options": {
    "A": "資料集個數為199筆，變數個數為4個",
@@ -699,7 +729,12 @@
  {
   "id": "middle_114-2_s2_q49",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "使用銷售資料集(marketing.csv)進行迴歸分析，附圖程式碼展示資料載入與處理，請回答後續48~50題。\n下圖顯示資料集的前5筆資料與相關資訊。",
+   "figures": [
+    "images/middle_114-2_s2_ctx4_fig1.png"
+   ]
+  },
   "stem": "參考下圖計算各變數的遺漏值(NaN)個數結果，下列何者正確？選項A: df.isnull().sum()選項B: df.isNaN().sum()選項C: df.isna().sum()選項D: df.isnan().sum()",
   "options": {
    "A": "選項D",
@@ -718,7 +753,12 @@
  {
   "id": "middle_114-2_s2_q50",
   "subject_name": "大數據處理分析與應用",
-  "context": null,
+  "context": {
+   "text": "使用銷售資料集(marketing.csv)進行迴歸分析，附圖程式碼展示資料載入與處理，請回答後續48~50題。\n下圖顯示資料集的前5筆資料與相關資訊。",
+   "figures": [
+    "images/middle_114-2_s2_ctx4_fig1.png"
+   ]
+  },
   "stem": "考慮資料集已經填補遺漏值，參考下圖執行結果，下列何者正確？A：空格1完整語法reg = LinearRegression().fit(y, X)B：空格1完整語法reg = LinearRegression().fit(X, y)C：print(reg.coef_)結果為包括截距項等4個係數值D：空格2完整語法sm.OLS(X2, y).fit()E：model_sm迴歸模型的所有迴歸係數在α=0.05之下具有顯著的解釋力F：截距項係數值為3.5561",
   "options": {
    "A": "B、C、F",
