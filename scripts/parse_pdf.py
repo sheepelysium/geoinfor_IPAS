@@ -103,9 +103,19 @@ def split_options(lines: list[str]) -> tuple[str, dict, dict]:
             pos = idx + len(marker)
         emit(line[pos:].strip())
 
-    stem = "".join(stem_parts).strip().rstrip("；;")
-    options = {k: "".join(v).strip().rstrip("；;").strip() for k, v in opts.items()}
+    stem = join_lines(stem_parts).strip().rstrip("；;")
+    options = {k: join_lines(v).strip().rstrip("；;").strip() for k, v in opts.items()}
     return stem, options, opt_start_line
+
+
+def join_lines(parts: list[str]) -> str:
+    """合併換行; 英數字跨行相接時補回空格, 避免 "Conditional"+"Random" 黏成一字"""
+    out = ""
+    for p in parts:
+        if out and re.match(r"[A-Za-z0-9]", out[-1]) and re.match(r"[A-Za-z]", p):
+            out += " "
+        out += p
+    return out
 
 
 def is_cjk(ch: str) -> bool:

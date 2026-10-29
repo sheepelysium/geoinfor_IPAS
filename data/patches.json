@@ -103,5 +103,61 @@
   "set": {
    "context.text": "某人工智慧團隊正在開發一套自動光學檢測（Automated Optical Inspection, AOI）系統，目標是透過機械手臂上的相機，自動辨識晶圓表面是否存在「劃傷（Scratch）」或「污點（Spot）」等瑕疵。目前系統開發面臨以下挑戰：\n● 資料極度不平衡，正常晶圓影像約佔99%，有瑕疵影像僅佔1%。\n● 輸入影像品質不一致，包含不同解析度，且部分影像因機械手臂震動而出現模糊。\n● 在使用深層卷積神經網路（CNN）訓練時，Loss曲線震盪劇烈，甚至偶爾出現數值溢出（NaN）情形。\n請根據上述情境，回答第49~50題。"
   }
+ },
+ {
+  "id": "middle_114-2_s3_q41",
+  "reason": "敘述換行遺失,事件A、事件B與問句黏成一句",
+  "set": {
+   "stem": "考慮擲出骰子並採用Monte Carlo方法估算條件機率，參考附圖程式碼。事件A：擲出偶數；事件B：擲出大於3。請問下列何者為條件機率P(A∣B)的正確值？"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q48",
+  "reason": "敘述A~F之間換行遺失,補分號分隔",
+  "set": {
+   "stem": "參考下圖程式碼，下列何者正確？A：X_train -= X_train.mean(axis=0)將每個訓練集特徵的平均值調整為0；B：X_train /= X_train.std(axis=0)將每個訓練集特徵的標準差調整為0；C：X_train處理結果會將資料壓縮到0和1之間；D：標準化結果防止梯度爆炸或消失；E：標準化是屬於特徵選擇(Feature Selection)方法；F：X_train程式碼應修正為X_train = X_train.std(axis=0), X_test程式碼應修正為X_test = X_test.std(axis=0)"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q49",
+  "reason": "選項A的數學式在PDF為嵌入圖,文字在「其數學式為」截斷",
+  "set": {
+   "options.A": "activation=\"relu\"其數學式為 f(x) = 1/(1+e^(-x))"
+  }
+ },
+ {
+  "id": "middle_114-2_s3_q50",
+  "reason": "敘述A~E之間換行遺失,補分號分隔",
+  "set": {
+   "stem": "參考下圖執行結果，下列何者正確？A：空格1須填入\"b-\"；B：空格2須填入\"b--\"；C：空格1須填入\"r-\"；D：空格2須填入\"r--\"；E：驗證損失明顯較訓練損失減少更明顯"
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q03",
+  "reason": "權重矩陣下標Q脫離原位,散成「執Q行」與句尾多餘的Q",
+  "set": {
+   "stem": "某工程師在撰寫Transformer的Attention層時，需手動驗證矩陣維度是否相容。輸入矩陣Q已攤平成形狀為(1, 10)，Query投影權重矩陣W_Q形狀為(10, 64)。執行Q x W_Q後輸出的形狀為何？"
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q46",
+  "reason": "題組圖順序與情境文字相反:程式碼圖應在前、資料輸出圖在後",
+  "set": {
+   "context.figures": ["images/middle_115-1_s3_ctx5_fig2.png", "images/middle_115-1_s3_ctx5_fig1.png"]
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q47",
+  "reason": "同 q46:題組圖順序與情境文字相反",
+  "set": {
+   "context.figures": ["images/middle_115-1_s3_ctx5_fig2.png", "images/middle_115-1_s3_ctx5_fig1.png"]
+  }
+ },
+ {
+  "id": "middle_115-1_s3_q48",
+  "reason": "同 q46:題組圖順序與情境文字相反",
+  "set": {
+   "context.figures": ["images/middle_115-1_s3_ctx5_fig2.png", "images/middle_115-1_s3_ctx5_fig1.png"]
+  }
  }
 ]

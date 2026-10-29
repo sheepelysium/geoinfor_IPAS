@@ -238,8 +238,8 @@
   "stem": "下列哪一項應用情境與機器學習類型搭配正確？",
   "options": {
    "A": "在醫療影像資料中，僅有少部分影像有專家標註診斷，其餘大多數影像未標註，研究者結合已標註與未標註資料來建立模型—監督式學習（Supervised Learning）",
-   "B": "在自駕車模擬環境中，模型透過試駕獲得「是否安全通過路口」的獎勵或懲罰訊號，逐步調整決策策略—非監督式學習（UnsupervisedLearning）",
-   "C": "在顧客購買紀錄中，利用已知的「顧客是否流失」標籤，訓練模型以預測新顧客未來是否會流失—強化式學習（ReinforcementLearning）",
+   "B": "在自駕車模擬環境中，模型透過試駕獲得「是否安全通過路口」的獎勵或懲罰訊號，逐步調整決策策略—非監督式學習（Unsupervised Learning）",
+   "C": "在顧客購買紀錄中，利用已知的「顧客是否流失」標籤，訓練模型以預測新顧客未來是否會流失—強化式學習（Reinforcement Learning）",
    "D": "在股票市場資料中，輸入歷史股價序列，嘗試將未來可能走勢劃分成若干「上升型、盤整型、下降型」群組，無需使用任何標籤—非監督式學習（Unsupervised Learning）"
   },
   "answer": "D",
@@ -539,7 +539,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 29,
   "context": null,
-  "stem": "在「可解釋人工智慧（Explainable AI, XAI）」領域中，LIME（LocalInterpretable Model-agnostic Explanations）方法最核心的應用目的是什麼？",
+  "stem": "在「可解釋人工智慧（Explainable AI, XAI）」領域中，LIME（Local Interpretable Model-agnostic Explanations）方法最核心的應用目的是什麼？",
   "options": {
    "A": "解釋單一樣本（局部預測）的黑箱模型決策過程",
    "B": "全面提升黑箱模型整體的預測準確度",
@@ -577,7 +577,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 31,
   "context": null,
-  "stem": "在金融科技公司的信貸決策系統中，導入反事實解釋（CounterfactualExplanation）時，實際部署往往伴隨技術與監管挑戰。下列哪一項最符合該情境下的核心挑戰？",
+  "stem": "在金融科技公司的信貸決策系統中，導入反事實解釋（Counterfactual Explanation）時，實際部署往往伴隨技術與監管挑戰。下列哪一項最符合該情境下的核心挑戰？",
   "options": {
    "A": "需要建立完整的客戶行為預測模型來估算建議改變的實施成本，並整合到現有的風險管理系統架構中",
    "B": "必須使用聯邦學習技術保護客戶隱私，同時在分散式環境中計算跨機構的反事實解釋結果",
@@ -620,7 +620,7 @@
    "A": "將每筆異常事件資料複製多次以提升模型對異常的辨識敏感度，搭配全序列訓練模型（如LSTM）",
    "B": "對時間序列進行差分與標準化後，使用傳統監督式學習模型（如SVM）進行分類訓練",
    "C": "使用經過時間序列特化的SMOTE技術生成異常樣本，以平衡異常與正常資料比例",
-   "D": "採用基於重建誤差的自編碼器模型（Sequence-to-SequenceAutoencoder）進行異常偵測，並僅使用正常資料進行訓練"
+   "D": "採用基於重建誤差的自編碼器模型（Sequence-to-Sequence Autoencoder）進行異常偵測，並僅使用正常資料進行訓練"
   },
   "answer": "D",
   "figures": [],
@@ -637,7 +637,7 @@
   "stem": "在零售業進行客戶行為分析時，資料倉儲中發現多個欄位儲存相同的購買金額資訊（例如：amount_usd、total_price、transaction_value），但其單位、命名慣例及格式不一致，進而導致特徵工程階段混淆模型輸入。針對此種跨欄位語義重疊與結構冗餘問題，下列哪一種資料處理策略最合適且具實務可行性？",
   "options": {
    "A": "利用資料探勘技術自動選擇資料集中對目標變數最敏感的欄位，其他欄位捨棄即可，避免過度清理干擾原始結構",
-   "B": "保留所有相似欄位，交由高階模型（如Gradient Boosting或DeepLearning）自動學習特徵關聯，無需手動處理",
+   "B": "保留所有相似欄位，交由高階模型（如Gradient Boosting或Deep Learning）自動學習特徵關聯，無需手動處理",
    "C": "建立欄位命名標準，統一金額單位與格式，進行欄位正規化與語義合併，減少重複資訊影響特徵重要性估計",
    "D": "將重複欄位視為類別欄位，進行One-hot編碼（One-hot encoding）後輸入模型，以避免數值誤導模型學習過程"
   },
@@ -862,7 +862,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 46,
   "context": null,
-  "stem": "某電商公司想預測用戶是否會購買特定商品，資料中包含多種用戶屬性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵，以提升模型效能。下列哪一種描述最符合監督式特徵選擇（SupervisedFeature Selection）的概念？",
+  "stem": "某電商公司想預測用戶是否會購買特定商品，資料中包含多種用戶屬性與行為特徵。分析師希望選出對購買結果最有預測價值的特徵，以提升模型效能。下列哪一種描述最符合監督式特徵選擇（Supervised Feature Selection）的概念？",
   "options": {
    "A": "根據特徵的整體分布、變異度或資訊量進行篩選，而不直接參考目標變數",
    "B": "評估每個特徵與目標變數之間的相關性，選擇對預測結果貢獻最大的特徵",
@@ -1052,7 +1052,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 6,
   "context": null,
-  "stem": "某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合NoCode/Low Code平台與生成式AI技術，以下哪一種整合策略最能符合目標？",
+  "stem": "某設計團隊計畫在短時間內完成一款行動應用程式，必須同時達到高度個人化體驗、快速生成介面與行銷內容自動產出等需求。若結合No Code/Low Code平台與生成式AI技術，以下哪一種整合策略最能符合目標？",
   "options": {
    "A": "使用生成式AI自動產生API呼叫與元件配置，並由開發者手動整合至No Code平台流程",
    "B": "透過生成式AI在No Code平台中自動建立介面模板，並結合使用者數據即時生成個人化功能與行銷推播內容",
@@ -1073,9 +1073,9 @@
   "context": null,
   "stem": "某團隊希望讓AI自動查詢GitHub上的程式碼庫，並生成摘要給使用者參考。開發者決定透過Model Context Protocol（MCP）來實現，AI需先發出請求，再經由MCP架構逐步完成查詢與回傳。在此情境下，MCP運作流程的正確順序為何？",
   "options": {
-   "A": "MCP Server→AI Host→MCP Client→資料查詢→結果回傳AIHost",
-   "B": "MCP Client→AI Host→MCP Server→資料查詢→結果回傳AIHost",
-   "C": "AI Host→MCP Client→ MCP Server→資料查詢→結果回傳AIHost",
+   "A": "MCP Server→AI Host→MCP Client→資料查詢→結果回傳AI Host",
+   "B": "MCP Client→AI Host→MCP Server→資料查詢→結果回傳AI Host",
+   "C": "AI Host→MCP Client→ MCP Server→資料查詢→結果回傳AI Host",
    "D": "AI Host→MCP Server→MCP Client→資料查詢→結果回傳AI Host"
   },
   "answer": "C",
@@ -1208,7 +1208,7 @@
   "options": {
    "A": "API調用（API Calling）＋任務規劃器（Task Planner）",
    "B": "向量資料庫檢索（Vector Retrieval）＋API調用（API Calling）",
-   "C": "向量資料庫檢索（Vector Retrieval）＋任務規劃器（TaskPlanner）",
+   "C": "向量資料庫檢索（Vector Retrieval）＋任務規劃器（Task Planner）",
    "D": "任務規劃器（Task Planner）＋溫度參數（Temperature）設定"
   },
   "answer": "B",
@@ -1983,7 +1983,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 5,
   "context": null,
-  "stem": "某銀行建立AI詐欺交易偵測模型。歷史交易資料中，詐欺樣本比例極低，導致模型訓練時偏向預測為「正常交易」。資料科學團隊評估採用SMOTE（SyntheticMinority Over-sampling Technique）改善訓練資料分佈。下列何者最符合SMOTE技術的主要功能？",
+  "stem": "某銀行建立AI詐欺交易偵測模型。歷史交易資料中，詐欺樣本比例極低，導致模型訓練時偏向預測為「正常交易」。資料科學團隊評估採用SMOTE（Synthetic Minority Over-sampling Technique）改善訓練資料分佈。下列何者最符合SMOTE技術的主要功能？",
   "options": {
    "A": "透過隨機刪除部分正常交易資料，以降低類別失衡程度",
    "B": "依據少數類別樣本的特徵空間，合成產生新的少數類別樣本",
@@ -2002,7 +2002,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 6,
   "context": null,
-  "stem": "資料科學團隊在模型訓練前，需對數值特徵進行正規化（Normalization）或標準化（Standardization）。為確保模型評估結果具真實性並避免資料洩漏（DataLeakage），下列何者為最適當的作法？",
+  "stem": "資料科學團隊在模型訓練前，需對數值特徵進行正規化（Normalization）或標準化（Standardization）。為確保模型評估結果具真實性並避免資料洩漏（Data Leakage），下列何者為最適當的作法？",
   "options": {
    "A": "於資料分割前，先對完整資料集計算統計量並進行標準化處理",
    "B": "先分割訓練資料（Training Data）和測試資料（Test Data），並各自獨立計算統計量後進行標準化",
@@ -2382,7 +2382,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 26,
   "context": null,
-  "stem": "在可解釋AI(Explainable AI, XAI)的分類架構中，LIME（Local InterpretableModel-agnostic Explanations）屬於哪一類解釋技術？",
+  "stem": "在可解釋AI(Explainable AI, XAI)的分類架構中，LIME（Local Interpretable Model-agnostic Explanations）屬於哪一類解釋技術？",
   "options": {
    "A": "內建可解釋模型（Intrinsic Interpretability）：模型本身具有透明的決策結構",
    "B": "對話式解釋系統（Conversational AI Explainer）：透過互動對話提供模型解釋",
@@ -2420,7 +2420,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 28,
   "context": null,
-  "stem": "在金融業導入AI模型與可解釋性技術時，反事實解釋（CounterfactualExplanation）最符合下列哪一種應用？",
+  "stem": "在金融業導入AI模型與可解釋性技術時，反事實解釋（Counterfactual Explanation）最符合下列哪一種應用？",
   "options": {
    "A": "分析整體客戶群的信用風險分布，以預測未來違約率趨勢",
    "B": "回溯歷史呆帳案例，辨識造成違約的主要影響因素",
@@ -2439,7 +2439,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 29,
   "context": null,
-  "stem": "在深度學習模型的分析與驗證過程中，研究人員有時會利用「顯著性圖（SaliencyMap）」來輔助理解模型行為。下列何者最符合此技術的主要用途？",
+  "stem": "在深度學習模型的分析與驗證過程中，研究人員有時會利用「顯著性圖（Saliency Map）」來輔助理解模型行為。下列何者最符合此技術的主要用途？",
   "options": {
    "A": "量化各輸入特徵對模型整體預測準確度的平均影響程度",
    "B": "標示輸入資料中對單一預測結果影響較大的區域或部分",
@@ -2838,7 +2838,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 50,
   "context": null,
-  "stem": "某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（MissedDiagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？",
+  "stem": "某醫院使用機器學習模型篩檢癌症患者。模型預測結果會決定哪些病人需要進一步檢查。院方非常重視盡量找出所有可能的癌症患者，即希望降低漏診（Missed Diagnosis）風險，即便這可能增加一些誤判。下列哪一個評估指標最能反映模型找出癌症患者的能力？",
   "options": {
    "A": "精準率（Precision）",
    "B": "召回率（Recall）",
@@ -3142,7 +3142,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 16,
   "context": null,
-  "stem": "某企業建置Agentic AI系統處理跨部門複雜任務，團隊以解決方案圖譜（SolutionGraph）作為規劃框架。下列何者為Solution Graph的主要功能？",
+  "stem": "某企業建置Agentic AI系統處理跨部門複雜任務，團隊以解決方案圖譜（Solution Graph）作為規劃框架。下列何者為Solution Graph的主要功能？",
   "options": {
    "A": "取代語言模型推理機制，改以圖形搜尋完成決策",
    "B": "作為任務知識庫，用於儲存AI已完成案例以供檢索",
@@ -3313,7 +3313,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 25,
   "context": null,
-  "stem": "某機構計畫導入生成式AI旅遊資訊服務對話系統自動生成多語言對話。目前每月需人工翻譯600則訊息，每則成本50元；若改用ChatGPT API，每則訊息需2000Tokens，而Token成本0.8元/1000 Tokens，但需額外投入系統整合費用20萬元。關於投資報酬率（Return on Investment, ROI）評估，下列何者最為正確？",
+  "stem": "某機構計畫導入生成式AI旅遊資訊服務對話系統自動生成多語言對話。目前每月需人工翻譯600則訊息，每則成本50元；若改用ChatGPT API，每則訊息需2000 Tokens，而Token成本0.8元/1000 Tokens，但需額外投入系統整合費用20萬元。關於投資報酬率（Return on Investment, ROI）評估，下列何者最為正確？",
   "options": {
    "A": "每月節省成本29,040元，系統整合成本約7個月回收",
    "B": "每月節省成本30,000元，系統整合成本約7個月回收",
@@ -4529,7 +4529,7 @@
   "subject_name": "人工智慧基礎概論",
   "number": 39,
   "context": null,
-  "stem": "在命名實體辨識（Named Entity Recognition, NER）任務中，模型需根據整句文字判斷每個詞的標籤，並考慮詞與詞之間的關聯性。若採用ConditionalRandom Field（CRF）作為模型，下列何者最能描述其模型類型？",
+  "stem": "在命名實體辨識（Named Entity Recognition, NER）任務中，模型需根據整句文字判斷每個詞的標籤，並考慮詞與詞之間的關聯性。若採用Conditional Random Field（CRF）作為模型，下列何者最能描述其模型類型？",
   "options": {
    "A": "生成式模型（Generative Model）",
    "B": "無監督模型（Unsupervised Model）",
@@ -5175,7 +5175,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 23,
   "context": null,
-  "stem": "某公司開發一個AI助理，能長期記住使用者的重要資訊（例如偏好與歷史需求），並在後續對話中加以利用。系統設計採用Titans架構的Memory asContext（MAC）機制，希望模型在回應時能同時參考目前對話與過去記憶。請問在此設計下，長期記憶最可能是下列哪一種使用方式？",
+  "stem": "某公司開發一個AI助理，能長期記住使用者的重要資訊（例如偏好與歷史需求），並在後續對話中加以利用。系統設計採用Titans架構的Memory as Context（MAC）機制，希望模型在回應時能同時參考目前對話與過去記憶。請問在此設計下，長期記憶最可能是下列哪一種使用方式？",
   "options": {
    "A": "將記憶模組整合進模型內部，讓每一層都使用記憶資訊",
    "B": "利用記憶調整模型的注意力強弱，使部分內容被優先關注",
@@ -5213,7 +5213,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 25,
   "context": null,
-  "stem": "某企業在設計AI代理（AI Agent）時，需判斷是否採用ReAct（Reason andAct）架構。下列哪一種情境最適合使用ReAct技術？",
+  "stem": "某企業在設計AI代理（AI Agent）時，需判斷是否採用ReAct（Reason and Act）架構。下列哪一種情境最適合使用ReAct技術？",
   "options": {
    "A": "將固定格式的PDF合約批次翻譯成多種語言並自動儲存，流程明確且步驟固定",
    "B": "根據既有規則判斷客戶是否符合退貨條件，並依結果回覆對應訊息",
@@ -5308,7 +5308,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 30,
   "context": null,
-  "stem": "一家法律科技公司導入RAG系統協助律師查詢判例，但有時會引用關聯性不足的文件，影響生成內容的可信度。若在流程中引入強化學習（ReinforcementLearning），其主要作用為何？",
+  "stem": "一家法律科技公司導入RAG系統協助律師查詢判例，但有時會引用關聯性不足的文件，影響生成內容的可信度。若在流程中引入強化學習（Reinforcement Learning），其主要作用為何？",
   "options": {
    "A": "依據律師回饋作為獎勵訊號，優化系統判斷檢索結果品質的能力",
    "B": "改善檢索排序機制，使較相關的文件優先被選用",
@@ -5631,7 +5631,7 @@
   "subject_name": "生成式AI應用與規劃",
   "number": 47,
   "context": null,
-  "stem": "某物流公司計劃導入生成式AI來預測交通流量並優化配送路線，預期每月處理500萬筆路況資料。在進行成本效益評估時，下列何者不屬於TCO（Total Costof Ownership）分析中的直接成本考量？",
+  "stem": "某物流公司計劃導入生成式AI來預測交通流量並優化配送路線，預期每月處理500萬筆路況資料。在進行成本效益評估時，下列何者不屬於TCO（Total Cost of Ownership）分析中的直接成本考量？",
   "options": {
    "A": "模型推理過程中API呼叫所產生的Token使用費用",
    "B": "為支援即時路況分析所需的雲端運算與儲存資源成本",
@@ -6223,7 +6223,7 @@
   "stem": "某農業合作社欲根據歷年各田區的日照時數、降雨量、施肥量及土壤酸鹼值等資料，搭配各田區當季實際收穫的稻米產量（公噸），建立模型，以預測下一季新田區的稻米產量（連續數值）。請問下列哪一組「學習類型／演算法／評估方式」的搭配最為合理？",
   "options": {
    "A": "監督式學習（Supervised Learning）／K-means／準確率（Accuracy）",
-   "B": "強化學習（Reinforcement Learning）／Q-learning／累積報酬（CumulativeReward）",
+   "B": "強化學習（Reinforcement Learning）／Q-learning／累積報酬（Cumulative Reward）",
    "C": "監督式學習（Supervised Learning）／線性迴歸（Linear Regression）／平均絕對誤差（MAE）",
    "D": "監督式學習（Supervised Learning）／支援向量機分類器（SVC）／混淆矩陣（Confusion Matrix）"
   },

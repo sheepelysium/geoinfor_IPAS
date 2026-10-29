@@ -45,10 +45,10 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 3,
   "context": null,
-  "stem": "某企業計畫應用BERT（Bidirectional Encoder Representationsfrom Transformers）模型分析大量顧客意見，以強化客服自動回覆系統。在BERT的預訓練過程中，「遮罩語言模型（Masked LanguageModel, MLM）」的主要訓練策略為何？",
+  "stem": "某企業計畫應用BERT（Bidirectional Encoder Representations from Transformers）模型分析大量顧客意見，以強化客服自動回覆系統。在BERT的預訓練過程中，「遮罩語言模型（Masked Language Model, MLM）」的主要訓練策略為何？",
   "options": {
    "A": "依序遮罩句尾詞語，讓模型從左到右逐步生成完整句子",
-   "B": "隨機遮罩部分詞語，並讓模型根據雙向上下文（BidirectionalContext）預測被遮罩的詞",
+   "B": "隨機遮罩部分詞語，並讓模型根據雙向上下文（Bidirectional Context）預測被遮罩的詞",
    "C": "透過對抗訓練（Adversarial Training）生成語意相似的擾動樣本以提升泛化性",
    "D": "以未遮罩的詞為條件，使用解碼器（Decoder）結構重建整句內容"
   },
@@ -64,7 +64,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 4,
   "context": null,
-  "stem": "在詞向量（Word Embedding）訓練方法中，GloVe（Global Vectorsfor Word Representation）與Word2Vec的主要差異為何？",
+  "stem": "在詞向量（Word Embedding）訓練方法中，GloVe（Global Vectors for Word Representation）與Word2Vec的主要差異為何？",
   "options": {
    "A": "Word2Vec以詞頻權重訓練詞向量，而GloVe以隨機初始化向量進行學習",
    "B": "Word2Vec以全局統計矩陣為基礎，而GloVe採用神經網路進行上下文預測",
@@ -83,7 +83,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 5,
   "context": null,
-  "stem": "某企業以詞頻–逆文件頻率（Term Frequency–Inverse DocumentFrequency, TF-IDF）方法分析顧客意見內容，但發現模型在處理篇幅較長的回饋文本時，無法準確反映關鍵詞的重要性。下列何者為造成此現象的主要原因？",
+  "stem": "某企業以詞頻–逆文件頻率（Term Frequency–Inverse Document Frequency, TF-IDF）方法分析顧客意見內容，但發現模型在處理篇幅較長的回饋文本時，無法準確反映關鍵詞的重要性。下列何者為造成此現象的主要原因？",
   "options": {
    "A": "長文本中的詞頻偏高，導致常見詞權重被過度放大",
    "B": "長文本中缺乏明確句子邊界，造成TF-IDF無法計算詞頻",
@@ -121,7 +121,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 7,
   "context": null,
-  "stem": "在企業導入的智慧監控系統中，模型以物件偵測（ObjectDetection）方式自動辨識影像中的人物與車輛。若評估指標採用平均精確率（Mean Average Precision, mAP），其中IoU（Intersection over Union）閾值設定較高時，代表下列哪一項意義？",
+  "stem": "在企業導入的智慧監控系統中，模型以物件偵測（Object Detection）方式自動辨識影像中的人物與車輛。若評估指標採用平均精確率（Mean Average Precision, mAP），其中IoU（Intersection over Union）閾值設定較高時，代表下列哪一項意義？",
   "options": {
    "A": "預測邊界框與真實邊界框的重疊程度越高，模型偵測結果越精準",
    "B": "預測邊界框與真實邊界框的誤差越大，導致mAP數值上升",
@@ -159,7 +159,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 9,
   "context": null,
-  "stem": "某企業在訓練生成式AI模型時，導入資料增強（DataAugmentation）技術以擴充訓練資料，但觀察到模型效能反而下降。下列哪一項最可能的原因與對應改善策略最為正確？",
+  "stem": "某企業在訓練生成式AI模型時，導入資料增強（Data Augmentation）技術以擴充訓練資料，但觀察到模型效能反而下降。下列哪一項最可能的原因與對應改善策略最為正確？",
   "options": {
    "A": "增強樣本未經隨機初始化，導致模型梯度更新不穩定，應重新設計訓練啟動流程",
    "B": "增強後資料的特徵分佈與原始資料不一致，影響模型的泛化能力，應檢查並調整增強策略以維持語意一致性",
@@ -197,7 +197,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 11,
   "context": null,
-  "stem": "企業資料分析團隊使用DBSCAN（Density-Based Spatial Clusteringof Applications with Noise）演算法進行顧客行為分群，並希望模型能自動區分主要群集與雜訊資料。在此演算法中，決定聚類結果的兩個主要超參數為下列何者？",
+  "stem": "企業資料分析團隊使用DBSCAN（Density-Based Spatial Clustering of Applications with Noise）演算法進行顧客行為分群，並希望模型能自動區分主要群集與雜訊資料。在此演算法中，決定聚類結果的兩個主要超參數為下列何者？",
   "options": {
    "A": "特徵數與學習率",
    "B": "K值與距離閾值",
@@ -216,7 +216,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 12,
   "context": null,
-  "stem": "某金融科技公司建立房價預測模型，使用多項特徵（如建坪、房齡、樓層、總價等）進行線性迴歸分析（Linear RegressionAnalysis）。資料分析師發現多個特徵之間存在高度相關性，導致模型係數不穩定、預測誤差上升。為解決此問題，下列哪一種方法最適合？",
+  "stem": "某金融科技公司建立房價預測模型，使用多項特徵（如建坪、房齡、樓層、總價等）進行線性迴歸分析（Linear Regression Analysis）。資料分析師發現多個特徵之間存在高度相關性，導致模型係數不穩定、預測誤差上升。為解決此問題，下列哪一種方法最適合？",
   "options": {
    "A": "繼續保留所有特徵，不進行任何處理",
    "B": "使用主成分分析（PCA）將相關特徵轉換為彼此獨立的主成分",
@@ -311,9 +311,9 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 17,
   "context": null,
-  "stem": "在自然語言處理中，檢索增強生成（Retrieval-AugmentedGeneration, RAG）是一種結合語言模型與向量搜尋的技術，可有效減少模型知識過時與產生幻覺的問題。若要建立一套高效能的RAG系統，下列何者為在「檢索階段」最關鍵的挑戰？",
+  "stem": "在自然語言處理中，檢索增強生成（Retrieval-Augmented Generation, RAG）是一種結合語言模型與向量搜尋的技術，可有效減少模型知識過時與產生幻覺的問題。若要建立一套高效能的RAG系統，下列何者為在「檢索階段」最關鍵的挑戰？",
   "options": {
-   "A": "確保檢索到的文件能被完整納入語言模型的上下文視窗（ContextWindow）中進行生成",
+   "A": "確保檢索到的文件能被完整納入語言模型的上下文視窗（Context Window）中進行生成",
    "B": "選擇使用Faiss或ScaNN等近似最近鄰搜尋函式庫",
    "C": "降低嵌入模型（Embedding Model）在高維空間中的計算成本與記憶體占用",
    "D": "避免向量檢索結果僅具語意相似但與查詢意圖無實質關聯的情況"
@@ -330,7 +330,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 18,
   "context": null,
-  "stem": "當Transformer模型發生「注意力分布過於平均（AttentionCollapse）」的情形時，導致模型無法有效聚焦於關鍵資訊，下列哪一項策略可有效改善此問題？",
+  "stem": "當Transformer模型發生「注意力分布過於平均（Attention Collapse）」的情形時，導致模型無法有效聚焦於關鍵資訊，下列哪一項策略可有效改善此問題？",
   "options": {
    "A": "提高Query-Key點積（Dot Product）的縮放常數",
    "B": "在Softmax前加入高斯雜訊（Gaussian Noise）",
@@ -468,7 +468,7 @@
    "A": "對生成內容進行語意相似度比對，自動標註可能涉及既有著作的輸出結果，以降低侵權風險",
    "B": "建立訓練資料篩選與授權驗證機制，排除未授權或高風險資料來源",
    "C": "在訓練與微調過程中採用差分隱私技術，避免模型記憶特定受著作權保護的樣本",
-   "D": "在模型輸出端嵌入浮水印（Watermarking）或數位指紋（DigitalFingerprint）技術，以確保生成內容可追溯"
+   "D": "在模型輸出端嵌入浮水印（Watermarking）或數位指紋（Digital Fingerprint）技術，以確保生成內容可追溯"
   },
   "answer": "B",
   "figures": [],
@@ -601,7 +601,7 @@
    "A": "系統CPU與記憶體使用率波動幅度",
    "B": "模型推論結果的置信度（Confidence）分佈變化趨勢",
    "C": "API平均回應時間與延遲百分位數變化",
-   "D": "輸入特徵與訓練資料分布差異的PSI（Population StabilityIndex）指數"
+   "D": "輸入特徵與訓練資料分布差異的PSI（Population Stability Index）指數"
   },
   "answer": "D",
   "figures": [],
@@ -694,7 +694,7 @@
   "stem": "某公司正在訓練一個大型語音合成模型，開發團隊使用多台GPU進行訓練，但經常出現GPU記憶體不足問題。由於模型架構已固定且無法更換硬體，團隊希望在維持模型效能與收斂品質的前提下，下列哪一種方法最有效降低單張GPU的記憶體壓力？",
   "options": {
    "A": "減少訓練資料量以降低記憶體使用",
-   "B": "採用較小的批次大小（Batch Size）並搭配資料分片（DataSharding）分散訓練負載",
+   "B": "採用較小的批次大小（Batch Size）並搭配資料分片（Data Sharding）分散訓練負載",
    "C": "增加學習率（Learning Rate）以加快收斂速度",
    "D": "改用測試資料集（Test Set）進行部分訓練以節省空間"
   },
@@ -729,7 +729,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 39,
   "context": null,
-  "stem": "某企業的資料科學團隊利用ARIMA模型（AutoRegressiveIntegrated Moving Average Model）預測每週產品銷售量。模型建立完成後，分析人員發現預測誤差隨時間呈現週期性波動，且自相關函數（ACF）顯示殘差在多個時滯（Lag）上仍顯著不為零。根據上述現象，最合理的模型診斷結論為何？",
+  "stem": "某企業的資料科學團隊利用ARIMA模型（AutoRegressive Integrated Moving Average Model）預測每週產品銷售量。模型建立完成後，分析人員發現預測誤差隨時間呈現週期性波動，且自相關函數（ACF）顯示殘差在多個時滯（Lag）上仍顯著不為零。根據上述現象，最合理的模型診斷結論為何？",
   "options": {
    "A": "模型殘差符合白噪音（White Noise）假設，預測表現穩定",
    "B": "模型殘差雖有輕微異常，但可視為隨機誤差忽略不計",
@@ -748,12 +748,12 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 40,
   "context": null,
-  "stem": "下列哪一項最正確地描述了VAE（Variational Autoencoder）、GAN（Generative Adversarial Network）與擴散模型（DiffusionModel）在多模態潛在空間對齊（Latent Alignment）與生成策略上的根本差異？",
+  "stem": "下列哪一項最正確地描述了VAE（Variational Autoencoder）、GAN（Generative Adversarial Network）與擴散模型（Diffusion Model）在多模態潛在空間對齊（Latent Alignment）與生成策略上的根本差異？",
   "options": {
    "A": "VAE透過顯式潛在變數建模實現跨模態對齊，適合捕捉整體語意結構但生成解析度有限；GAN透過對抗損失（Adversarial Loss）在不同模態間學習分佈映射，生成品質高但穩定性差；擴散模型則以條件化噪聲反推（Conditional Denoising）方式實現高保真跨模態生成，兼具穩定性與多樣性",
    "B": "VAE與DiffusionＭodel均屬隱式生成架構，主要依賴對抗式訓練實現跨模態對齊；GAN則以顯式後驗估計方式提升樣本一致性",
    "C": "VAE與GAN均使用馬爾可夫鏈（Markov Chain）進行跨模態轉換；Diffusion Model則透過KL散度最小化學習語意對應。",
-   "D": "三者在多模態應用中皆依賴同一潛在表徵空間（Shared LatentSpace），僅在解碼器結構不同而已"
+   "D": "三者在多模態應用中皆依賴同一潛在表徵空間（Shared Latent Space），僅在解碼器結構不同而已"
   },
   "answer": "A",
   "figures": [],
@@ -769,7 +769,7 @@
   "context": null,
   "stem": "在進行超參數調校（Hyperparameter Tuning）時，若直接在K-Fold交叉驗證（Cross-Validation）的資料上同時調整模型參數並評估效能，最可能導致下列哪一種問題？",
   "options": {
-   "A": "模型的交叉驗證結果出現過度樂觀偏差（Over-optimisticBias），因測試摺資料間接參與參數選擇，造成資料洩漏（DataLeakage）",
+   "A": "模型的交叉驗證結果出現過度樂觀偏差（Over-optimistic Bias），因測試摺資料間接參與參數選擇，造成資料洩漏（Data Leakage）",
    "B": "模型會在每一摺（Fold）內反覆調整參數，導致訓練不穩與過度正則化",
    "C": "因交叉驗證資料被重複使用，造成效能方差增大，無法獲得穩定估計",
    "D": "K-Fold交叉驗證的假設與超參數搜尋相衝突，導致驗證過程失效"
@@ -843,7 +843,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 45,
   "context": null,
-  "stem": "進行影像分類任務時，研究團隊嘗試利用主成分分析（PrincipalComponent Analysis, PCA）將輸入特徵從1024維降至100維，並將降維後的資料輸入支持向量機（Support Vector Machine, SVM）模型進行訓練。關於此作法，下列哪一項描述最為合理？",
+  "stem": "進行影像分類任務時，研究團隊嘗試利用主成分分析（Principal Component Analysis, PCA）將輸入特徵從1024維降至100維，並將降維後的資料輸入支持向量機（Support Vector Machine, SVM）模型進行訓練。關於此作法，下列哪一項描述最為合理？",
   "options": {
    "A": "PCA保留的主成分必然能提升SVM的分類準確率",
    "B": "使用原始高維資料通常更能保留資訊，因此PCA沒有實際意義",
@@ -864,7 +864,7 @@
   "context": null,
   "stem": "某企業的AI模型已部署於線上服務環境中，用於即時預測顧客流失機率。近期團隊注意到模型預測準確率逐漸下降，但系統運作正常且未出現錯誤訊息。經分析發現，近期輸入資料的分布與模型訓練資料相比出現顯著偏移。若要在MLOps流程中主動偵測並預警此類問題，最應採用下列哪項措施？",
   "options": {
-   "A": "建立即時的資料漂移（Data Drift）與概念漂移（ConceptDrift）監測機制",
+   "A": "建立即時的資料漂移（Data Drift）與概念漂移（Concept Drift）監測機制",
    "B": "將模型轉換為量化版本以降低延遲",
    "C": "增加模型超參數調整次數以強化適應性",
    "D": "使用固定隨機種子（Random Seed）確保訓練穩定"
@@ -883,10 +883,10 @@
   "context": null,
   "stem": "某金融科技公司導入多任務學習架構，讓單一Transformer模型同時執行OCR（Optical Character Recognition）後的文檔分類以及命名實體辨識（Named Entity Recognition, NER）任務，以協助自動歸檔與抽取關鍵金融資訊。在部署初期，團隊發現當模型的NER準確率（Accuracy）提升時，文檔分類準確率反而下降。若模型架構正確且資料品質良好，下列哪一項最可能是造成此現象的原因？",
   "options": {
-   "A": "模型架構無法同時支援文字分類與序列標註任務（SequenceLabeling）",
-   "B": "文檔分類任務不需要語意化表徵（ContextualizedRepresentation）",
+   "A": "模型架構無法同時支援文字分類與序列標註任務（Sequence Labeling）",
+   "B": "文檔分類任務不需要語意化表徵（Contextualized Representation）",
    "C": "損失函數（Loss Function）未進行權重平衡，導致任務間競爭",
-   "D": "所使用的BERT模型無法支援多任務輸出頭（Multi-HeadOutputs）"
+   "D": "所使用的BERT模型無法支援多任務輸出頭（Multi-Head Outputs）"
   },
   "answer": "C",
   "figures": [],
@@ -1059,7 +1059,7 @@
   "context": null,
   "stem": "在進行資料分析時，會遇到類別型（Categorical）與數值型（Numerical）資料格式。關於這兩種資料格式的處理，下列敘述何者不正確？",
   "options": {
-   "A": "One-Hot編碼（One-Hot Encoding）會將類別變數轉換為多維二元向量，適用於無序（Nominal）類別資料，但在高基數（HighCardinality）特徵下可能造成維度爆炸問題",
+   "A": "One-Hot編碼（One-Hot Encoding）會將類別變數轉換為多維二元向量，適用於無序（Nominal）類別資料，但在高基數（High Cardinality）特徵下可能造成維度爆炸問題",
    "B": "標籤編碼（Label Encoding）會以整數表示不同類別，若應用於無序（Nominal）資料，可能導致模型誤將編碼值解讀為具數值大小關係的特徵",
    "C": "標準化（Standardization）透過將資料平移與縮放，使其平均值為0、標準差為1，可在多數距離型演算法中改善收斂速度，並同時將數值範圍壓縮至0至1之間",
    "D": "對連續變數進行分箱（Binning）可提升模型可解釋性，但若分段方式未依據資料分佈特性設計，可能導致資訊損失或邊界偏誤"
@@ -1271,7 +1271,7 @@
    "A": "應優先採用獨熱編碼（One-Hot Encoding），以減少類別之間的相依性與記憶體使用量",
    "B": "直接使用標籤編碼（Label Encoding）可能使模型誤判類別間存在順序關係，導致特徵重要性偏誤",
    "C": "使用目標編碼（Target Encoding）會自動消除過擬合（Overfitting）風險",
-   "D": "若類別數量較少，建議先使用主成分分析（Principal ComponentAnalysis, PCA）進行降維"
+   "D": "若類別數量較少，建議先使用主成分分析（Principal Component Analysis, PCA）進行降維"
   },
   "answer": "B",
   "figures": [],
@@ -1308,7 +1308,7 @@
   "options": {
    "A": "感測器→雲端API Gateway →分散式資料庫→批次特徵工程（→模型推論",
    "B": "感測器→ MQTT Broker →雲端資料倉儲→即時儀表板→模型再訓練",
-   "C": "感測器→邊緣運算節點→流式資料處理框架（Stream ProcessingFramework）→雲端資料湖→模型推論",
+   "C": "感測器→邊緣運算節點→流式資料處理框架（Stream Processing Framework）→雲端資料湖→模型推論",
    "D": "感測器→本地快取層→ RESTful API →雲端報表系統）→模型批次更新"
   },
   "answer": "C",
@@ -1475,7 +1475,7 @@
   "subject_name": "大數據處理分析與應用",
   "number": 28,
   "context": null,
-  "stem": "若在高維度（>500維）的資料上應用DBSCAN（Density-Based SpatialClustering of Applications with Noise）演算法，卻發現所有資料點皆被判定為雜訊（Noise），下列何者為最有可能的原因？",
+  "stem": "若在高維度（>500維）的資料上應用DBSCAN（Density-Based Spatial Clustering of Applications with Noise）演算法，卻發現所有資料點皆被判定為雜訊（Noise），下列何者為最有可能的原因？",
   "options": {
    "A": "高維下距離變化趨同，導致ε（Epsilon）閾值選擇失效",
    "B": "使用錯誤的距離函數（Distance Function）",
@@ -1494,7 +1494,7 @@
   "subject_name": "大數據處理分析與應用",
   "number": 29,
   "context": null,
-  "stem": "某團隊在開發風險評估模型時，使用主成分分析（Principal ComponentAnalysis, PCA）進行降維。輸入資料包含三個數值欄位：「交易金額（單位：新台幣）」、「交易次數（次／月）」與「年齡（歲）」，其數值量級分別約為10⁵、10¹與10²。分析人員直接將原始數據帶入PCA，結果第一主成分（PC1）幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理？",
+  "stem": "某團隊在開發風險評估模型時，使用主成分分析（Principal Component Analysis, PCA）進行降維。輸入資料包含三個數值欄位：「交易金額（單位：新台幣）」、「交易次數（次／月）」與「年齡（歲）」，其數值量級分別約為10⁵、10¹與10²。分析人員直接將原始數據帶入PCA，結果第一主成分（PC1）幾乎完全由「交易金額」主導。下列哪一項作法或判斷最合理？",
   "options": {
    "A": "這是正常現象，金額本身變異較大，應主導主要成分",
    "B": "若改用特徵選擇法，可自動解決變數量級問題",
@@ -1534,7 +1534,7 @@
   "context": null,
   "stem": "某電商團隊觀察到，每位顧客對廣告推播的點擊行為可視為一次伯努利試驗（Bernoulli Trial），單次點擊成功機率為p=0.4。當推播對象擴增至5,000位顧客時，團隊想快速預估「成功點擊總數」的分佈情形，以進行模型效能模擬與預測。若希望以常態分佈（Normal Distribution）近似原始分佈，下列哪一項判斷最為合理？",
   "options": {
-   "A": "因樣本數極大，可直接以常態分佈近似二項分佈（BinomialDistribution）",
+   "A": "因樣本數極大，可直接以常態分佈近似二項分佈（Binomial Distribution）",
    "B": "只有當np與n(1-p)皆大於5時，才能以常態分佈作近似",
    "C": "常態近似只適用於p=0.5的情況",
    "D": "無論樣本數多大，二項分佈都不能以常態分佈近似"
@@ -1732,7 +1732,7 @@
    "A": "K-means分群（K-means Clustering）",
    "B": "高斯混合模型分群（Gaussian Mixture Model Clustering）",
    "C": "階層式分群（Hierarchical Clustering）",
-   "D": "DBSCAN分群（Density-based Spatial Clustering of Applicationswith Noise Clustering）"
+   "D": "DBSCAN分群（Density-based Spatial Clustering of Applications with Noise Clustering）"
   },
   "answer": "A",
   "figures": [
@@ -1751,7 +1751,7 @@
   "subject_name": "大數據處理分析與應用",
   "number": 42,
   "context": null,
-  "stem": "考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（PoissonDistribution），已知平均每小時產生5個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？",
+  "stem": "考慮某生產線每小時出現瑕疵品的個數符合卜瓦松分佈（Poisson Distribution），已知平均每小時產生5個瑕疵品，附圖程式碼展示資料處理，請問下列敘述何者正確？",
   "options": {
    "A": "lambda_poisson = 5表示每小時最多5個瑕疵品",
    "B": "poisson.pmf(5, lambda_poisson)表示小於5個瑕疵品的機率",
@@ -2039,7 +2039,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 4,
   "context": null,
-  "stem": "在執行DBSCAN（Density-Based Spatial Clustering of Applicationswith Noise）群集分析時，若某資料點鄰域內的樣本數不足以形成核心點（Core Point），且該點未被任何核心點的鄰域所包含，也未與其他群集形成密度可達關係（Density Reachability），此資料點最終將被歸類為哪一種類型？",
+  "stem": "在執行DBSCAN（Density-Based Spatial Clustering of Applications with Noise）群集分析時，若某資料點鄰域內的樣本數不足以形成核心點（Core Point），且該點未被任何核心點的鄰域所包含，也未與其他群集形成密度可達關係（Density Reachability），此資料點最終將被歸類為哪一種類型？",
   "options": {
    "A": "鄰近點（Neighbor Point）",
    "B": "雜訊點（Noise Point）",
@@ -2077,11 +2077,11 @@
   "subject_name": "機器學習技術與應用",
   "number": 6,
   "context": null,
-  "stem": "某智慧城市團隊開發一套交通監控系統，用於即時辨識路口監視器影像中的車輛與行人。團隊比較後發現，卷積神經網路（Convolutional NeuralNetwork, CNN）在訓練與推論效率上，明顯優於傳統的全連接神經網路（Fully Connected Neural Network, FCNN）。請問下列何者為主要原因？",
+  "stem": "某智慧城市團隊開發一套交通監控系統，用於即時辨識路口監視器影像中的車輛與行人。團隊比較後發現，卷積神經網路（Convolutional Neural Network, CNN）在訓練與推論效率上，明顯優於傳統的全連接神經網路（Fully Connected Neural Network, FCNN）。請問下列何者為主要原因？",
   "options": {
    "A": "CNN能自動學習影像的旋轉與比例不變性",
    "B": "CNN可直接跳過人工特徵提取步驟進行分類",
-   "C": "CNN透過區域感知（Local Receptive Field）與參數共享（ParameterSharing）機制，降低模型參數量與運算複雜度",
+   "C": "CNN透過區域感知（Local Receptive Field）與參數共享（Parameter Sharing）機制，降低模型參數量與運算複雜度",
    "D": "CNN捨棄激勵函數（Activation Function），以加快運算速度"
   },
   "answer": "C",
@@ -2343,7 +2343,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 20,
   "context": null,
-  "stem": "某電子商務公司為開發商品評論情感分析模型，希望模型能捕捉評論中不同特徵之間的關聯影響，例如「商品價格」與「顧客滿意度」的互動效果。下列哪一種特徵工程設計方式最適合用於建立互動特徵（InteractionFeatures）？",
+  "stem": "某電子商務公司為開發商品評論情感分析模型，希望模型能捕捉評論中不同特徵之間的關聯影響，例如「商品價格」與「顧客滿意度」的互動效果。下列哪一種特徵工程設計方式最適合用於建立互動特徵（Interaction Features）？",
   "options": {
    "A": "將單一特徵取平方",
    "B": "對所有特徵進行對數轉換",
@@ -2386,7 +2386,7 @@
    "A": "根據歷史樣本自動分群，找出行為相似的顧客群",
    "B": "以條件機率方式計算顧客屬於「會購買」或「不會購買」的分類機率",
    "C": "以最小平方誤差（Mean Squared Error）為損失函數，預測顧客的購買金額",
-   "D": "依據回饋信號（Feedback Signal）透過強化學習（ReinforcementLearning）動態調整推薦策略"
+   "D": "依據回饋信號（Feedback Signal）透過強化學習（Reinforcement Learning）動態調整推薦策略"
   },
   "answer": "B",
   "figures": [],
@@ -2438,7 +2438,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 25,
   "context": null,
-  "stem": "某金融機構正在建立傳統信用評分卡模型，採用邏輯迴歸（LogisticRegression）作為建模方法，並依循監理機關建議的標準化流程進行模型開發。下列哪一項不是傳統信用評分卡模型開發流程中的常見步驟？",
+  "stem": "某金融機構正在建立傳統信用評分卡模型，採用邏輯迴歸（Logistic Regression）作為建模方法，並依循監理機關建議的標準化流程進行模型開發。下列哪一項不是傳統信用評分卡模型開發流程中的常見步驟？",
   "options": {
    "A": "使用生成式模型進行特徵學習",
    "B": "進行特徵選擇與多重共線性（Multicollinearity）分析",
@@ -2517,7 +2517,7 @@
   "stem": "在工業設備故障預測專案中，模型訓練與超參數調整均依賴於一段歷史數據作為驗證集。然而，隨著設備運行環境與工況條件的變化，原有驗證集已無法充分反映現況，導致模型在實際部署後的預測準確率逐漸下降。下列哪一種策略最能有效提升模型在長期運行環境中的穩健性與泛化能力？",
   "options": {
    "A": "固定驗證集內容，並透過模型正則化技巧（如L2正則化）強化模型泛化",
-   "B": "將全部歷史資料納入訓練，不使用驗證集，依靠早期停止（EarlyStopping）控制訓練",
+   "B": "將全部歷史資料納入訓練，不使用驗證集，依靠早期停止（Early Stopping）控制訓練",
    "C": "簡化模型架構，減少模型參數數量以降低過擬合風險",
    "D": "採用時間序列交叉驗證（Time Series Cross Validation）或滑動視窗驗證（Rolling Window Validation）方法，動態更新驗證資料以適應時間演進"
   },
@@ -2614,7 +2614,7 @@
    "A": "5-Fold交叉驗證（5-Fold Cross Validation）",
    "B": "留一法交叉驗證（Leave-One-Out Cross Validation）",
    "C": "隨機交叉驗證（Random Cross Validation）",
-   "D": "分層留一法交叉驗證（Stratified Leave-One-Out CrossValidation）"
+   "D": "分層留一法交叉驗證（Stratified Leave-One-Out Cross Validation）"
   },
   "answer": "D",
   "figures": [],
@@ -2668,10 +2668,10 @@
   "context": null,
   "stem": "某跨銀行風控平台希望整合多家銀行的用戶行為資料，用於訓練信用風險預測模型。由於競爭與法規限制，各銀行僅願意提供加密後資料，且資料在任何時間不得被平台解密。同時，平台需建立安全通訊協議以確保資料在傳輸過程未被竄改或重放。下列哪一組技術最能完整對應上述需求？",
   "options": {
-   "A": "對稱加密（Symmetric Encryption）＋單向雜湊（Hash Function）＋非對稱加密（Asymmetric Encryption）＋差分隱私（DifferentialPrivacy）",
-   "B": "同態加密（Homomorphic Encryption）＋非對稱加密（AsymmetricEncryption）＋單向雜湊（One-way Hash Function）＋對稱加密（Symmetric Encryption）",
-   "C": "差分隱私（Differential Privacy）＋對稱加密（SymmetricEncryption）＋同態加密（Homomorphic Encryption）＋數位簽章（Digital Signature）",
-   "D": "同態加密（Homomorphic Encryption）＋安全多方計算（SecureMulti-party Computation, MPC）＋雜湊函數（Hash Function）＋對稱加密（Symmetric Encryption）"
+   "A": "對稱加密（Symmetric Encryption）＋單向雜湊（Hash Function）＋非對稱加密（Asymmetric Encryption）＋差分隱私（Differential Privacy）",
+   "B": "同態加密（Homomorphic Encryption）＋非對稱加密（Asymmetric Encryption）＋單向雜湊（One-way Hash Function）＋對稱加密（Symmetric Encryption）",
+   "C": "差分隱私（Differential Privacy）＋對稱加密（Symmetric Encryption）＋同態加密（Homomorphic Encryption）＋數位簽章（Digital Signature）",
+   "D": "同態加密（Homomorphic Encryption）＋安全多方計算（Secure Multi-party Computation, MPC）＋雜湊函數（Hash Function）＋對稱加密（Symmetric Encryption）"
   },
   "answer": "B",
   "figures": [],
@@ -2757,7 +2757,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 41,
   "context": null,
-  "stem": "考慮擲出骰子並採用Monte Carlo方法估算條件機率，參考附圖程式碼。事件A：擲出偶數事件B：擲出大於3請問下列何者為條件機率P(A∣B)的正確值？",
+  "stem": "考慮擲出骰子並採用Monte Carlo方法估算條件機率，參考附圖程式碼。事件A：擲出偶數；事件B：擲出大於3。請問下列何者為條件機率P(A∣B)的正確值？",
   "options": {
    "A": "A_and_B.sum() / (A.sum() * B.sum())",
    "B": "A_and_B.sum() / (A.sum() + B.sum())",
@@ -2969,7 +2969,7 @@
     "images/middle_114-2_s3_ctx5_fig3.png"
    ]
   },
-  "stem": "參考下圖程式碼，下列何者正確？A：X_train -= X_train.mean(axis=0)將每個訓練集特徵的平均值調整為0B：X_train /= X_train.std(axis=0)將每個訓練集特徵的標準差調整為0C：X_train處理結果會將資料壓縮到0和1之間D：標準化結果防止梯度爆炸或消失E：標準化是屬於特徵選擇(Feature Selection)方法F：X_train程式碼應修正為X_train = X_train.std(axis=0), X_test程式碼應修正為X_test = X_test.std(axis=0)",
+  "stem": "參考下圖程式碼，下列何者正確？A：X_train -= X_train.mean(axis=0)將每個訓練集特徵的平均值調整為0；B：X_train /= X_train.std(axis=0)將每個訓練集特徵的標準差調整為0；C：X_train處理結果會將資料壓縮到0和1之間；D：標準化結果防止梯度爆炸或消失；E：標準化是屬於特徵選擇(Feature Selection)方法；F：X_train程式碼應修正為X_train = X_train.std(axis=0), X_test程式碼應修正為X_test = X_test.std(axis=0)",
   "options": {
    "A": "A、B、C、D",
    "B": "A、E",
@@ -3002,7 +3002,7 @@
   },
   "stem": "參考下圖執行結果，下列何者正確？",
   "options": {
-   "A": "activation=\"relu\"其數學式為",
+   "A": "activation=\"relu\"其數學式為 f(x) = 1/(1+e^(-x))",
    "B": "空格1值為110，空格2值為100",
    "C": "空格1值為100，空格2值為110",
    "D": "activation=\"sigmoid\"一般用於多類別分類預測模型"
@@ -3031,7 +3031,7 @@
     "images/middle_114-2_s3_ctx5_fig3.png"
    ]
   },
-  "stem": "參考下圖執行結果，下列何者正確？A：空格1須填入\"b-\"B：空格2須填入\"b--\"C：空格1須填入\"r-\"D：空格2須填入\"r--\"E：驗證損失明顯較訓練損失減少更明顯",
+  "stem": "參考下圖執行結果，下列何者正確？A：空格1須填入\"b-\"；B：空格2須填入\"b--\"；C：空格1須填入\"r-\"；D：空格2須填入\"r--\"；E：驗證損失明顯較訓練損失減少更明顯",
   "options": {
    "A": "B、C",
    "B": "A、C、D",
@@ -3059,7 +3059,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 1,
   "context": null,
-  "stem": "某工程師正在建置一套法律文件解析系統，在進行資訊擷取（InformationExtraction）前，需要對文本進行詞性標註（Part-of-Speech Tagging, POS Tagging）。請問此步驟的主要目的為何？",
+  "stem": "某工程師正在建置一套法律文件解析系統，在進行資訊擷取（Information Extraction）前，需要對文本進行詞性標註（Part-of-Speech Tagging, POS Tagging）。請問此步驟的主要目的為何？",
   "options": {
    "A": "將文本翻譯為其他語言以利跨語言分析",
    "B": "將文本切分為基本詞彙單位，以便後續處理",
@@ -3116,7 +3116,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 4,
   "context": null,
-  "stem": "某金融科技公司的工程師正在準備內部客服對話與交易紀錄文本，進行BERT模型的預訓練，以提升模型對金融語境的理解能力，並採用遮蔽語言建模（MaskedLanguage Model, MLM）作為訓練任務。請問MLM的核心訓練目標為何？",
+  "stem": "某金融科技公司的工程師正在準備內部客服對話與交易紀錄文本，進行BERT模型的預訓練，以提升模型對金融語境的理解能力，並採用遮蔽語言建模（Masked Language Model, MLM）作為訓練任務。請問MLM的核心訓練目標為何？",
   "options": {
    "A": "讓模型自左至右逐token生成句子，學習自迴歸語言模型（Autoregressive LM）能力",
    "B": "透過對抗訓練（Adversarial Training）縮小真實句與生成句之間的語意差異",
@@ -3211,7 +3211,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 9,
   "context": null,
-  "stem": "某團隊在監控影像分類模型的線上效能時，透過儀表板呈現混淆矩陣（ConfusionMatrix），以觀察模型預測結果與實際標籤的分佈情形。請問下列哪一項無法從混淆矩陣中直接計算？",
+  "stem": "某團隊在監控影像分類模型的線上效能時，透過儀表板呈現混淆矩陣（Confusion Matrix），以觀察模型預測結果與實際標籤的分佈情形。請問下列哪一項無法從混淆矩陣中直接計算？",
   "options": {
    "A": "精確率（Precision）",
    "B": "準確率（Accuracy）",
@@ -3368,7 +3368,7 @@
    "A": "影像模態用LSTM、文字模態用CNN、時序模態用BERT",
    "B": "影像模態用TF-IDF、文字模態用ResNet、時序模態用Word2Vec",
    "C": "三種模態統一使用BERT，因為Transformer架構具備通用性，可處理任意形式的輸入資料",
-   "D": "影像模態用CNN、文字模態用Transformer、時序模態用LSTM或TemporalCNN"
+   "D": "影像模態用CNN、文字模態用Transformer、時序模態用LSTM或Temporal CNN"
   },
   "answer": "D",
   "figures": [],
@@ -3382,7 +3382,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 18,
   "context": null,
-  "stem": "某醫院的AI研究團隊正在開發一套整合「CT影像+電子病歷文本+基因序列」三種模態資料的癌症預測模型。請問在此場景中採用「跨模態對齊（Cross-ModalAlignment）」技術主要解決什麼問題？",
+  "stem": "某醫院的AI研究團隊正在開發一套整合「CT影像+電子病歷文本+基因序列」三種模態資料的癌症預測模型。請問在此場景中採用「跨模態對齊（Cross-Modal Alignment）」技術主要解決什麼問題？",
   "options": {
    "A": "使模型僅聚焦於CT影像資料，避免文本與基因資料引入雜訊",
    "B": "自動生成跨模態配對標註，以減少人工標記需求",
@@ -3619,7 +3619,7 @@
   "options": {
    "A": "透過對目標函數進行梯度下降（Gradient Descent）最佳化，迭代求得主成分方向",
    "B": "根據特徵與目標變數之間的相關性（Correlation）進行排序，選擇重要特徵",
-   "C": "對資料的協方差矩陣（Covariance Matrix）進行特徵值分解（EigenDecomposition），取得對應主要變異方向的特徵向量",
+   "C": "對資料的協方差矩陣（Covariance Matrix）進行特徵值分解（Eigen Decomposition），取得對應主要變異方向的特徵向量",
    "D": "對資料矩陣進行卷積運算（Convolution），擷取特徵之間的局部關係"
   },
   "answer": "C",
@@ -3976,7 +3976,7 @@
   "subject_name": "人工智慧技術應用與規劃",
   "number": 49,
   "context": null,
-  "stem": "某零售電商平台已建立模型監控儀表板，用於追蹤線上推薦模型的運作狀態與效能表現。維運工程師需判斷哪些指標屬於「線上持續監控（ContinuousMonitoring）」的範疇。下列指標中，哪一項最不適合在即時監控系統中追蹤，而應改由離線實驗追蹤系統管理？",
+  "stem": "某零售電商平台已建立模型監控儀表板，用於追蹤線上推薦模型的運作狀態與效能表現。維運工程師需判斷哪些指標屬於「線上持續監控（Continuous Monitoring）」的範疇。下列指標中，哪一項最不適合在即時監控系統中追蹤，而應改由離線實驗追蹤系統管理？",
   "options": {
    "A": "訓練實驗中每個Epoch的學習率（Learning Rate）變化曲線與超參數（Hyperparameter）設定軌跡",
    "B": "線上推論API的P50/P95/P99回應延遲與每日請求量（RPS）趨勢",
@@ -4060,9 +4060,9 @@
   "stem": "某物流平台要預測「每小時客服來電數量」，資料顯示平均每小時12通，且來電事件彼此獨立，並在固定時間區間內發生率穩定。工程師在選擇機率模型時，應優先考慮哪個分布？若實際資料的變異數明顯大於平均數，應如何調整？",
   "options": {
    "A": "使用常態分布（Normal Distribution）；變異數偏大時改用t分布",
-   "B": "使用卜瓦松分布（Poisson Distribution）；變異數>平均數時改用負二項分布（NegativeBinomial）",
+   "B": "使用卜瓦松分布（Poisson Distribution）；變異數>平均數時改用負二項分布（Negative Binomial）",
    "C": "使用卜瓦松分布（Poisson Distribution）；變異數偏大時增加樣本數即可修正",
-   "D": "使用二項分布（Binomial Distribution）；變異數偏大時改用卜瓦松分布（PoissonDstribution）"
+   "D": "使用二項分布（Binomial Distribution）；變異數偏大時改用卜瓦松分布（Poisson Dstribution）"
   },
   "answer": "B",
   "figures": [],
@@ -4218,8 +4218,8 @@
   "options": {
    "A": "兩模型皆將「客服評價」與「居住縣市」進行One-Hot Encoding，保留全部欄位並使用相同特徵矩陣訓練模型",
    "B": "Logistic Regression將「客服評價」做Ordinal Encoding、「居住縣市」以歷史續約率進行編碼且於資料切分前計算；XGBoost對兩個特徵皆採Ordinal Encoding處理",
-   "C": "Logistic Regression將「客服評價」做Ordinal Encoding、「居住縣市」進行One-HotEncoding並採Drop First；XGBoost將「客服評價」採Ordinal Encoding，「居住縣市」以類別型態輸入並啟用enable_categorical",
-   "D": "兩個模型均將「客服評價」以平均續約率進行編碼，「居住縣市」先做One-HotEncoding再以PCA降維，並統一作為兩模型輸入特徵"
+   "C": "Logistic Regression將「客服評價」做Ordinal Encoding、「居住縣市」進行One-Hot Encoding並採Drop First；XGBoost將「客服評價」採Ordinal Encoding，「居住縣市」以類別型態輸入並啟用enable_categorical",
+   "D": "兩個模型均將「客服評價」以平均續約率進行編碼，「居住縣市」先做One-Hot Encoding再以PCA降維，並統一作為兩模型輸入特徵"
   },
   "answer": "C",
   "figures": [],
@@ -4566,7 +4566,7 @@
   "subject_name": "大數據處理分析與應用",
   "number": 29,
   "context": null,
-  "stem": "某AI系統的維運工程師需要在儀表板上呈現「模型推論延遲（ms）隨時間的變化趨勢」，以便即時監控服務水準協議（Service Level Agreement, SLA）是否達標（P99<200ms）。在資料視覺化的圖表類型選擇上，下列哪種圖表最適合呈現連續數值隨時間變化的趨勢？",
+  "stem": "某AI系統的維運工程師需要在儀表板上呈現「模型推論延遲（ms）隨時間的變化趨勢」，以便即時監控服務水準協議（Service Level Agreement, SLA）是否達標（P99<200 ms）。在資料視覺化的圖表類型選擇上，下列哪種圖表最適合呈現連續數值隨時間變化的趨勢？",
   "options": {
    "A": "面積圖（Area Chart）",
    "B": "散佈圖（Scatter Plot）",
@@ -4680,7 +4680,7 @@
   "subject_name": "大數據處理分析與應用",
   "number": 35,
   "context": null,
-  "stem": "某工程師在開發一個以Transformer為基礎的文本分類模型時，發現模型對於詞語順序的變化不夠敏感，影響語意判斷效果。請問在Transformer架構中，位置編碼（PositionalEncoding）的主要作用為何？",
+  "stem": "某工程師在開發一個以Transformer為基礎的文本分類模型時，發現模型對於詞語順序的變化不夠敏感，影響語意判斷效果。請問在Transformer架構中，位置編碼（Positional Encoding）的主要作用為何？",
   "options": {
    "A": "在詞嵌入（Embedding）中加入隨機擾動，以提升模型對輸入變化的泛化能力",
    "B": "在注意力機制中加入遮罩（Mask），限制模型只能關注部分詞語",
@@ -5100,7 +5100,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 3,
   "context": null,
-  "stem": "某工程師在撰寫Transformer的Attention層時，需手動驗證矩陣維度是否相容。輸入矩陣Q已攤平成形狀為(1, 10)，Query投影權重矩陣W形狀為(10, 64)。執Q行Q x W後輸出的形狀為何？Q",
+  "stem": "某工程師在撰寫Transformer的Attention層時，需手動驗證矩陣維度是否相容。輸入矩陣Q已攤平成形狀為(1, 10)，Query投影權重矩陣W_Q形狀為(10, 64)。執行Q x W_Q後輸出的形狀為何？",
   "options": {
    "A": "(1, 64)",
    "B": "(10, 10)",
@@ -5119,7 +5119,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 4,
   "context": null,
-  "stem": "某AI團隊同時開發多個影像辨識系統，並在訓練流程中統一加入資料擴增策略（包含隨機水平翻轉）以提升模型泛化能力。實驗後發現，部分任務的測試表現明顯下降。下列哪一項任務最可能因該資料擴增策略引入語意錯誤（SemanticInconsistency），使同一樣本在翻轉後對應不同類別標籤，進而影響模型學習？",
+  "stem": "某AI團隊同時開發多個影像辨識系統，並在訓練流程中統一加入資料擴增策略（包含隨機水平翻轉）以提升模型泛化能力。實驗後發現，部分任務的測試表現明顯下降。下列哪一項任務最可能因該資料擴增策略引入語意錯誤（Semantic Inconsistency），使同一樣本在翻轉後對應不同類別標籤，進而影響模型學習？",
   "options": {
    "A": "寵物監控中的貓狗分類",
    "B": "車輛辨識中的車型分類",
@@ -5580,7 +5580,7 @@
    "A": "使用羅吉斯迴歸（Logistic Regression），透過線性係數解釋特徵影響，但無法有效建模非線性關係",
    "B": "使用隨機森林迴歸（Random Forest Regression），可處理非線性關係，並提供整體特徵重要性（Feature Importance）作為解釋依據",
    "C": "用K-means分群（K-means Clustering）後分別建立迴歸模型，以提升預測準確度並間接提升可解釋性",
-   "D": "使用支持向量迴歸（Support Vector Regression, SVR），透過核函數（KernelFunction）捕捉非線性關係，並以支持向量解釋模型決策"
+   "D": "使用支持向量迴歸（Support Vector Regression, SVR），透過核函數（Kernel Function）捕捉非線性關係，並以支持向量解釋模型決策"
   },
   "answer": "B",
   "figures": [],
@@ -5636,7 +5636,7 @@
   "options": {
    "A": "獎勵塑形（Reward Shaping）：將獎勵改為「成功完成一次揀貨任務」而非單次抓取行為",
    "B": "策略退化（Policy Degradation）：降低學習率以穩定訓練",
-   "C": "信用分配問題（Credit Assignment Problem）：引入優勢函數（AdvantageFunction）",
+   "C": "信用分配問題（Credit Assignment Problem）：引入優勢函數（Advantage Function）",
    "D": "災難性遺忘（Catastrophic Forgetting）：加入經驗回放（Replay Buffer）"
   },
   "answer": "A",
@@ -5689,7 +5689,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 34,
   "context": null,
-  "stem": "某工程師使用XGBoost模型進行調參，需對以下超參數進行網格搜尋（GridSearch）：learning_rate（3個候選值）、max_depth（4個）、n_estimators（5個）、subsample（3個）、colsample_bytree（3個）。每組參數組合皆需完整進行5-Fold交叉驗證。請問總共需要訓練幾個模型？",
+  "stem": "某工程師使用XGBoost模型進行調參，需對以下超參數進行網格搜尋（Grid Search）：learning_rate（3個候選值）、max_depth（4個）、n_estimators（5個）、subsample（3個）、colsample_bytree（3個）。每組參數組合皆需完整進行5-Fold交叉驗證。請問總共需要訓練幾個模型？",
   "options": {
    "A": "3 + 4 + 5 + 3 + 3 = 18個",
    "B": "5 × 5 = 25個",
@@ -5746,7 +5746,7 @@
   "subject_name": "機器學習技術與應用",
   "number": 37,
   "context": null,
-  "stem": "某銀行導入AI貸款審核系統，監管要求每筆被拒絕的申請須提供可理解的拒絕原因。技術主管評估以下方案，哪一種最能實現個別預測的局部可解釋性（LocalExplainability）？",
+  "stem": "某銀行導入AI貸款審核系統，監管要求每筆被拒絕的申請須提供可理解的拒絕原因。技術主管評估以下方案，哪一種最能實現個別預測的局部可解釋性（Local Explainability）？",
   "options": {
    "A": "SHAP（SHapley Additive exPlanations）值：計算每個特徵對單筆預測的貢獻",
    "B": "全域特徵重要性（Global Feature Importance）：說明整體特徵影響，無法解釋單一個案",
@@ -5904,7 +5904,7 @@
     "images/middle_115-1_s3_ctx3_fig1.png"
    ]
   },
-  "stem": "研究人員撰寫的程式中（下圖），先用整體資料進行LDA（Linear DiscriminantAnalysis）降維，接著再用KNN（K-Nearest Neighbors）進行分類，並用交叉驗證來評估準確率。請問下列敘述何者正確？",
+  "stem": "研究人員撰寫的程式中（下圖），先用整體資料進行LDA（Linear Discriminant Analysis）降維，接著再用KNN（K-Nearest Neighbors）進行分類，並用交叉驗證來評估準確率。請問下列敘述何者正確？",
   "options": {
    "A": "此寫法完全正確，因為先以整體資料進行LDA降維，再以交叉驗證測試KNN，是標準流程",
    "B": "此寫法存在資料洩漏（Data Leakage）問題，應將LDA納入交叉驗證流程中一併進行",
@@ -5963,8 +5963,8 @@
   "context": {
    "text": "請依據下方資訊回答第46~48題。\n使用CIFAR-10資料集以建立卷積神經網路（CNN），進行彩色影像之分類與辨識\n分析。CIFAR-10為一常用之影像分類基準資料集，內容包含10個類別，共計60000\n張彩色影像，其中訓練集含50000張影像，測試集則含10000張影像。每張影像解\n析度為32 × 32像素，並具有三個通道（channel），分別對應紅、綠、藍三原色。\n以下程式碼片段示範資料載入與處理流程。\n下圖顯示資料集的第1筆部分資料。",
    "figures": [
-    "images/middle_115-1_s3_ctx5_fig1.png",
-    "images/middle_115-1_s3_ctx5_fig2.png"
+    "images/middle_115-1_s3_ctx5_fig2.png",
+    "images/middle_115-1_s3_ctx5_fig1.png"
    ]
   },
   "stem": "參考下圖資料處理，下列哪一項描述組合正確？",
@@ -5993,8 +5993,8 @@
   "context": {
    "text": "請依據下方資訊回答第46~48題。\n使用CIFAR-10資料集以建立卷積神經網路（CNN），進行彩色影像之分類與辨識\n分析。CIFAR-10為一常用之影像分類基準資料集，內容包含10個類別，共計60000\n張彩色影像，其中訓練集含50000張影像，測試集則含10000張影像。每張影像解\n析度為32 × 32像素，並具有三個通道（channel），分別對應紅、綠、藍三原色。\n以下程式碼片段示範資料載入與處理流程。\n下圖顯示資料集的第1筆部分資料。",
    "figures": [
-    "images/middle_115-1_s3_ctx5_fig1.png",
-    "images/middle_115-1_s3_ctx5_fig2.png"
+    "images/middle_115-1_s3_ctx5_fig2.png",
+    "images/middle_115-1_s3_ctx5_fig1.png"
    ]
   },
   "stem": "參考下圖建立模型結果，下列哪一項描述組合正確？",
@@ -6023,8 +6023,8 @@
   "context": {
    "text": "請依據下方資訊回答第46~48題。\n使用CIFAR-10資料集以建立卷積神經網路（CNN），進行彩色影像之分類與辨識\n分析。CIFAR-10為一常用之影像分類基準資料集，內容包含10個類別，共計60000\n張彩色影像，其中訓練集含50000張影像，測試集則含10000張影像。每張影像解\n析度為32 × 32像素，並具有三個通道（channel），分別對應紅、綠、藍三原色。\n以下程式碼片段示範資料載入與處理流程。\n下圖顯示資料集的第1筆部分資料。",
    "figures": [
-    "images/middle_115-1_s3_ctx5_fig1.png",
-    "images/middle_115-1_s3_ctx5_fig2.png"
+    "images/middle_115-1_s3_ctx5_fig2.png",
+    "images/middle_115-1_s3_ctx5_fig1.png"
    ]
   },
   "stem": "參考下圖繪圖結果，當Epochs=6時，訓練曲線值(0.81)明顯大於驗證曲線值(0.72)，下列何者為最可能的原因？",
@@ -6058,7 +6058,7 @@
   "options": {
    "A": "VGG（Visual Geometry Group）：透過重複堆疊3×3卷積層與池化層來維持梯度穩定",
    "B": "GoogLeNet：透過Inception模塊並行使用不同大小的卷積核，以避免深層網路的梯度問題",
-   "C": "ResNet（Residual Network）：透過殘差連接（Residual Connection / SkipConnection），使梯度能跨層傳遞並降低深層訓練困難",
+   "C": "ResNet（Residual Network）：透過殘差連接（Residual Connection / Skip Connection），使梯度能跨層傳遞並降低深層訓練困難",
    "D": "Vision Transformer（ViT）：完全捨棄卷積，因此不會出現任何深層模型的訓練問題"
   },
   "answer": "C",
