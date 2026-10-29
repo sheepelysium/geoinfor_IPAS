@@ -30,7 +30,7 @@
 
 網站可依來源篩選(全部 / 歷屆試題 / 學習指引)。學習指引題的解題思路會標示「官方解析」徽章。
 
-來源:[iPAS 官方學習資源](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)。學習指引題已套用官方勘誤表修正(目前 1 題:初級科目1 答案 B→A)。
+來源:[iPAS 官方學習資源](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)。學習指引題已套用官方勘誤表修正(目前 2 題:初級科目1 第3題答案 B→A、第7題題目與選項措辭)。
 
 ## 部署(Cloudflare Workers 靜態資產)
 
@@ -63,7 +63,7 @@ uv run scripts/build_site_data.py   # 合併註解+人工修正 → site/data/qu
 uv run scripts/audit.py             # 稽查題庫是否有跨題黏連污染
 ```
 
-- `data/patches.json`:PDF 解析無法自動處理的**題目內容**人工修正(目前 14 筆,集中在中級的跨題組黏連)
+- `data/patches.json`:PDF 解析無法自動處理的**題目內容**人工修正(目前 22 筆,集中在中級的跨題組黏連與敘述斷行)
 - `data/explanation-fixes.json`:**詳解**人工修正(改寫錯誤說明、補答案疑義與時效註記、清除過期註記),於 `build_site_data.py` 套用在 AI 註解之上,重跑註解 agent 不會被覆蓋
 - ⚠ `data/annotate/out/*.json` 是 **AI 原始輸出、未經修正**,可能含已被修正或已過期的內容;正確版本一律以 `build_site_data.py` 產出的 `site/data/questions-*.js` 為準,不要直接引用 `annotate/out`
 - 新梯次試題公告後:把新 PDF 的 URL 加進 `download_pdfs.py` 的 `FILES`,重跑整條管線
