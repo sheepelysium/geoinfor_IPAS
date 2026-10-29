@@ -44,18 +44,44 @@
   // - 全形（A）一律視為引用
   // - 半形 (A) 只在前一字不是英數字時才算(避開 P(A)、np.linalg.inv(A) 這類寫法),
   //   且題幹若出現半形 (A) 代表那是程式碼填空標記,整題的半形引用都不動
+  // - 裸字母只在「選項／答案／取／選／只有／僅／剩下」之後,或「X選項」之前才算引用,
+  //   可帶「B、C、D」這種串列;其餘(程式碼A、類別B、999°C…)一律不動
+  // - 組合題(選項本身是「B、C、F」這類字母／編號清單)裡的字母指題幹敘述,
+  //   只換「對應選項X／對應答案X」
+  var LIST = "([A-D](?:\\s*[、與和及,，]\\s*[A-D])*)";
+  var END = "(?![A-Za-z0-9_=]|\\(\\d)";
+  // 前綴、後綴合成一條,單次掃描,避免「只有B選項」被換兩次
+  var RE_BARE = new RegExp(
+    "(選項|答案(?:為|取|採|是)?|取|採|選|只有|僅|剩下)(\\s?)" + LIST + END +
+    "|(^|[^A-Za-z0-9_])" + LIST + "(\\s?(?:兩個|三個|四個)?選項)", "g");
+  var RE_COMBO_REF = /(對應(?:選項|答案))(\s?)([A-D])(?![A-Za-z0-9_])/g;
+  var RE_COMBO_OPT = /^(?:[一-鿿]{0,3}[A-F]|\d)(?:\s*[、,，]\s*(?:[一-鿿]{0,3}[A-F]|\d))*$/;
+
+  function isComboQuestion(q) {
+    return Object.keys(q.options || {}).every(function (k) {
+      return RE_COMBO_OPT.test(String(q.options[k]).trim());
+    });
+  }
+
   function remapLetters(text, q, order) {
     if (!text || !order) return text;
     var map = {};
     order.forEach(function (key, i) { map[key] = "ABCD"[i]; });
+    var mapList = function (s) { return s.replace(/[A-D]/g, function (L) { return map[L] || L; }); };
     var codeBlanks = /\([A-D]\)/.test(q.stem || "");
-    return String(text)
+    var out = String(text)
       .replace(/（([A-D])）/g, function (m, L) {
         return map[L] ? "（" + map[L] + "）" : m;
       })
       .replace(/([^A-Za-z0-9_]|^)\(([A-D])\)/g, function (m, pre, L) {
         return codeBlanks || !map[L] ? m : pre + "(" + map[L] + ")";
       });
+    if (isComboQuestion(q)) {
+      return out.replace(RE_COMBO_REF, function (m, pre, sp, L) { return pre + sp + (map[L] || L); });
+    }
+    return out.replace(RE_BARE, function (m, pre, sp, list, lead, list2, tail) {
+      return pre !== undefined ? pre + sp + mapList(list) : lead + mapList(list2) + tail;
+    });
   }
 
   function show(viewId) {
